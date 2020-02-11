@@ -1,0 +1,22 @@
+[
+    {
+        "name": "kubernetes",
+        "owner": "kubernetes"
+    },
+    {
+        "name": "tensorflow",
+        "owner": "tensorflow"
+    },
+    {
+        "name": "vscode",
+        "owner": "microsoft"
+    },
+    {
+        "name": "nixpkgs",
+        "owner": "NixOS"
+    },
+    {
+        "name": "rust",
+        "owner": "rust-lang"
+    }
+]

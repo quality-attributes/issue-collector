@@ -1,0 +1,14 @@
+query getRepoIssue($name: String!, $owner: String!, $number: Int!) {
+  repository(name: $name, owner: $owner) {
+    issue(number: $number) {
+      author {
+        login
+      }
+      title
+      state
+      closedAt
+      bodyText
+      number
+    }
+  }
+}

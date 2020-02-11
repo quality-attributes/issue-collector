@@ -1,0 +1,27 @@
+{
+  "name": "issue-collector",
+  "version": "0.5.0",
+  "description": "GitHub Issue Collector Module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quality-attributes/issue-collector.git"
+  },
+  "author": "Manolomon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/quality-attributes/issue-collector/issues"
+  },
+  "homepage": "https://github.com/quality-attributes/issue-collector#readme",
+  "dependencies": {
+    "apollo-fetch": "^0.7.0",
+    "chalk": "^3.0.0",
+    "dotenv": "^8.2.0",
+    "graphql": "^14.6.0"
+  },
+  "devDependencies": {}
+}
