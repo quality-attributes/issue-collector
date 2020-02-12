@@ -48,7 +48,7 @@ process.on('message', msg => {
 
     fetchIssues(name, owner).then(repoData => {
         fs.writeFileSync(`data/${owner}_${name}.json`,
-            JSON.stringify(repoData.repository.issues),
+            JSON.stringify(repoData.repository.issues.nodes),
             'utf8', function (err) {
                 if (err) {
                     process.send(false)

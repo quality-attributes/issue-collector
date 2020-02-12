@@ -6,7 +6,7 @@ Issue collector module using the entry point provided by GitHub on its [API vers
 
 To be able to use the Github API methods for command lines, an OAUTH token is needed. Github provides [an article](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) showing the request procedure.
 
-Once the token is provided, It shoud be placed on a `.env` file as follows:
+Once the token is provided, it should be placed on a `.env` file as follows:
 
 ```js
   GH_OAUTH=[your-access-token-provided-by-github]
