@@ -1,0 +1,18 @@
+query fetchRepoIssues($name: String!, $owner: String!) {
+  repository(name: $name, owner: $owner) {
+    issues(last: 100) {
+      nodes {
+        author {
+          login
+        }
+        number
+        resourcePath
+        state
+        publishedAt
+        closedAt
+        title
+        bodyText
+      }
+    }
+  }
+}

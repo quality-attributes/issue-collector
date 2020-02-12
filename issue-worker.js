@@ -1,10 +1,17 @@
+var fs = require('fs');
+require.extensions['.graphql'] = function (module, filename) {
+    module.exports = fs.readFileSync(filename, 'utf8');
+};
+var queryIssueData = require("./fetchRepoIssues.graphql");
+
 const { createApolloFetch } = require('apollo-fetch');
 
-async function getIssues(owner, name) {
+const apiURI = 'https://api.github.com/graphql';
+
+async function fetchIssues(name, owner) {
     return new Promise((resolve, reject) => {
-        console.log(`https://github.com/${owner}/${name}.git`)
         const fetch = createApolloFetch({
-            uri: 'https://api.github.com/graphql',
+            uri: apiURI,
         });
 
         fetch.use(({ options }, next) => {
@@ -12,25 +19,23 @@ async function getIssues(owner, name) {
                 options.headers = {};  // Create the headers object if needed.
             }
             options.headers['Authorization'] = 'bearer ' + process.env.GH_OAUTH;
-
             next();
         });
+
         fetch({
-            query: `query getRepoIssueNumber($name: String!, $owner: String!) {
-                repository(name: $name, owner: $owner) {
-                    issues {
-                        totalCount
-                    }
-                }
-            }`,
+            query: queryIssueData,
             variables: {
                 name: name,
                 owner: owner
             },
         }).then(res => {
-            console.log(res.data.repository);
-            resolve(true)
+            if (!res.errors) {
+                resolve(res.data)
+            } else {
+                reject(res.errors)
+            }
         }).catch(err => {
+            console.log(err)
             reject(err)
         });
     });
@@ -41,11 +46,21 @@ process.on('message', msg => {
     const owner = dis[0];
     const name = dis[1];
 
-    getIssues(owner, name).then(bool => {
-        process.send(bool);
+    fetchIssues(name, owner).then(repoData => {
+        fs.writeFileSync(`data/${owner}_${name}.json`,
+            JSON.stringify(repoData.repository.issues),
+            'utf8', function (err) {
+                if (err) {
+                    process.send(false)
+                }
+                process.send(true)
+            });
+        process.send(true)
     }).catch(error => {
-        process.send(error.message);
+        process.send(error[0].message);
     }).finally(() => {
         process.exit(0);
     });
 });
+
+
