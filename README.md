@@ -9,12 +9,12 @@ To be able to use the Github API methods for command lines, an OAUTH token is ne
 Once the token is provided, it should be placed on a `.env` file as follows:
 
 ```js
-  GH_OAUTH=[your-access-token-provided-by-github]
+  GH_OAUTH=[github-access-token]
 ```
 
 ### Repositories
 
-For the scope of this research, 5 repositories were scraped. To customize the repos of interest, the `repositories.json` must be edited with the repository `owner` and `name`.
+For the scope of this research, 5 repositories were scraped. To customize the projects of interest, the `repositories.json` must be edited with the `owner` and `name`.
 
 ```js
   [
@@ -47,12 +47,12 @@ The `graphql` query made for this module, only collects the last 100 issues, ord
 
 Install dependencies
 
-```shell
+```sh
   yarn install
 ```
 
 Run scraper.
 
-```shell
+```sh
   yarn run start
 ```
