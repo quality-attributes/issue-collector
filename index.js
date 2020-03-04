@@ -31,6 +31,6 @@
                     + chalk.bold.red('Failed')) + chalk.bold(`: ${response}`);
             }
         });
-        worker.send(repositories[key].owner + '/' + repositories[key].name);
+        worker.send(repositories[key].owner + '/' + repositories[key].name + '/' + repositories[key].issues);
     });
 })();

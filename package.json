@@ -21,7 +21,8 @@
     "apollo-fetch": "^0.7.0",
     "chalk": "^3.0.0",
     "dotenv": "^8.2.0",
-    "graphql": "^14.6.0"
+    "graphql": "^14.6.0",
+    "random": "^2.1.1"
   },
   "devDependencies": {}
 }

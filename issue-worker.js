@@ -5,15 +5,15 @@ require.extensions['.graphql'] = function (module, filename) {
 var queryIssueData = require("./fetchRepoIssues.graphql");
 
 const { createApolloFetch } = require('apollo-fetch');
+const random = require('random')
 
 const apiURI = 'https://api.github.com/graphql';
 
-async function fetchIssues(name, owner) {
+async function fetchIssue(name, owner, issuesCount, issueNumber) {
     return new Promise((resolve, reject) => {
         const fetch = createApolloFetch({
             uri: apiURI,
         });
-
         fetch.use(({ options }, next) => {
             if (!options.headers) {
                 options.headers = {};  // Create the headers object if needed.
@@ -26,13 +26,16 @@ async function fetchIssues(name, owner) {
             query: queryIssueData,
             variables: {
                 name: name,
-                owner: owner
+                owner: owner,
+                issue: issueNumber
             },
         }).then(res => {
             if (!res.errors) {
                 resolve(res.data)
             } else {
-                reject(res.errors)
+                console.log(owner + '/' + name + ' ' + res.errors[0].type + ': ' + issueNumber)
+                resolve(fetchIssue(name, owner, issuesCount, random.int(min = 1, issuesCount)))
+                //resolve(res.data)
             }
         }).catch(err => {
             console.log(err)
@@ -45,10 +48,26 @@ process.on('message', msg => {
     const dis = msg.split('/');
     const owner = dis[0];
     const name = dis[1];
+    const issuesCount = parseInt(dis[2]);
 
-    fetchIssues(name, owner).then(repoData => {
+    var randIssues = []
+    var issues = []
+
+    for (i = 0; i < 50; i++) {
+        randIssues.push(random.int(min = 1, max = issuesCount))
+    }
+
+    async function fetchIssues() {
+        const promises = randIssues.map(async (issueNumber) =>
+            await fetchIssue(name, owner, issuesCount, issueNumber).then(repoData => {
+                issues.push(repoData)
+            })
+        );
+
+        await Promise.all(promises);
+
         fs.writeFileSync(`data/${owner}_${name}.json`,
-            JSON.stringify(repoData.repository.issues.nodes),
+            JSON.stringify(issues),
             'utf8', function (err) {
                 if (err) {
                     process.send(false)
@@ -56,11 +75,10 @@ process.on('message', msg => {
                 process.send(true)
             });
         process.send(true)
-    }).catch(error => {
-        process.send(error[0].message);
-    }).finally(() => {
         process.exit(0);
-    });
+    }
+
+    fetchIssues()
 });
 
 

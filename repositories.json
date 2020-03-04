@@ -1,22 +1,27 @@
 [
     {
         "name": "vscode",
-        "owner": "microsoft"
+        "owner": "microsoft",
+        "issues": 84013
     },
     {
         "name": "flutter",
-        "owner": "flutter"
+        "owner": "flutter",
+        "issues": 33048
     },
     {
         "name": "tensorflow",
-        "owner": "tensorflow"
+        "owner": "tensorflow",
+        "issues": 23392
     },
     {
         "name": "kubernetes",
-        "owner": "kubernetes"
+        "owner": "kubernetes",
+        "issues": 33853
     },
     {
         "name": "ansible",
-        "owner": "ansible"
+        "owner": "ansible",
+        "issues": 26393
     }
 ]

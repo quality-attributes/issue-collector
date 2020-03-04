@@ -1,7 +1,6 @@
-query fetchRepoIssues($name: String!, $owner: String!) {
+query fetchRepoIssues($name: String!, $owner: String!, $issue: Int!) {
   repository(name: $name, owner: $owner) {
-    issues(last: 100) {
-      nodes {
+    issue(number: $issue) {
         author {
           login
         }
@@ -12,7 +11,6 @@ query fetchRepoIssues($name: String!, $owner: String!) {
         closedAt
         title
         bodyText
-      }
     }
   }
 }
