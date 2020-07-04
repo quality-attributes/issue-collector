@@ -1,0 +1,1602 @@
+[
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "borgdylan"
+                },
+                "number": 53812,
+                "resourcePath": "/microsoft/vscode/issues/53812",
+                "state": "CLOSED",
+                "publishedAt": "2018-07-08T17:09:55Z",
+                "closedAt": "2019-10-10T00:48:29Z",
+                "title": "Request: Left Close/Max/Min buttons variant for custom title bar",
+                "bodyText": "I really like the new title bar style that can be activated by \"editor.titleBarStyle\": \"custom\". However, as a long time Ubuntu user I'm accustomed to my window close/max/min controls being on the left hand side of the title bar. Is is possbible to have another member in the titleBarStyle enum \"custom-left\" or something named similarly to have the controls render on the far left rather than the far right in the order close, minimize, maximize(restore)?\nBelow, the native menu for VS Code (I do not mind the square buttons of the ciustom style as they fit well with the VS brand):"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "Olddude"
+                },
+                "number": 37058,
+                "resourcePath": "/microsoft/vscode/issues/37058",
+                "state": "CLOSED",
+                "publishedAt": "2017-10-27T20:35:47Z",
+                "closedAt": "2017-10-30T15:10:51Z",
+                "title": "When relaunch vscode after aborted vscode update then Uncaught Exception thrown",
+                "bodyText": "VSCode Version: 1.17.0.0\nOS Version: Microsoft Windows [Version 10.0.14393]\n\nSteps to Reproduce:\n\nUpdate vscode\nWhile updating launch a second vscode instance\nAbort the Installation on Dialog\nStart vscode again\n\n\nReproduces without extensions: Yes"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "eparizzi"
+                },
+                "number": 8966,
+                "resourcePath": "/microsoft/vscode/issues/8966",
+                "state": "CLOSED",
+                "publishedAt": "2016-07-08T18:32:58Z",
+                "closedAt": "2016-07-08T19:11:38Z",
+                "title": "Integratel Terminal doesn't find commands from PATH",
+                "bodyText": "VSCode Version:\nVersion 1.3.0\nCommit e724f26\nDate 2016-07-07T16:56:12.476Z\nShell 0.37.6\nRenderer 49.0.2623.75\nNode 5.10.0\nOS Version:\nWindows 7 x64 SP1\n\nI have installed Git for Windows with both the git and Unix commands in the PATH.\nVSCode doesn't seem to find the Unix commands."
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "electronik54"
+                },
+                "number": 40634,
+                "resourcePath": "/microsoft/vscode/issues/40634",
+                "state": "OPEN",
+                "publishedAt": "2017-12-21T10:04:35Z",
+                "closedAt": null,
+                "title": "Color picker wont open when hovering over color box or moving between box and value",
+                "bodyText": "VSCode Version: Code - Insiders 1.20.0-insider (8f015e5, 2017-12-21T08:34:32.639Z)\nOS Version: Windows_NT x64 10.0.15063\nExtensions:\n\n\n\n\nExtension\nAuthor (truncated)\nVersion\n\n\n\n\nstaticserver\ngao\n0.0.5\n\n\n\n\nSteps to Reproduce:\njust mention a color in hex format and hover arrow of the hex code, this should normally open a in-biult color picker. This is not working only in the insider version, color picker works perfectly in Visual Code.\nhowever, whenever the color picker would appear, it would quickly close itself and very rarely it would work properly.\nThis issue is since 2 previous versions of VSinsider\nReproduces without extensions: Yes"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "wmeints"
+                },
+                "number": 28693,
+                "resourcePath": "/microsoft/vscode/issues/28693",
+                "state": "CLOSED",
+                "publishedAt": "2017-06-14T07:03:33Z",
+                "closedAt": "2017-06-14T16:39:18Z",
+                "title": "Icons are fuzzy in the UI",
+                "bodyText": "Since the update to 1.13 I am seeing fuzzy icons in the UI of VSCode. I am using the light theme. This is unrelated to the theme I select. Switching between light and dark themes doesn't fix the problem.\n\n\nVSCode Version: Code 1.13.0 (376c52b, 2017-06-08T16:34:53.678Z)\nOS Version: Darwin x64 16.6.0\n\nSteps to Reproduce:\n\nOpen VS Code\nOpen a code file"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "michelkaporin"
+                },
+                "number": 27456,
+                "resourcePath": "/microsoft/vscode/issues/27456",
+                "state": "CLOSED",
+                "publishedAt": "2017-05-29T14:47:39Z",
+                "closedAt": "2017-06-01T09:16:36Z",
+                "title": "Test: Automated Smoke Test",
+                "bodyText": "Ref: #25291\nComplexity: 2\nOS:\n\n Windows @alexandrudima\n OS X @weinand\n Linux @Tyriar\n\nAs part of engineering work we have automated major part of our smoke test. To ensure its stability, it is important to run it on different machines.\nRunning automated test\nPrerequisites\n\nUpdate stable to the latest version.\nClose all VS Code instances that will be used in a test (e.g. latest insiders, stable) not to have any interference with the running test that will spawn them itself.\n\nOnce the test is running, please do not interfere with it by doing selection or focusing anywhere within spawned test VS Code instance.\nApproximate running time\n10 minutes minimum (the more failures it has, the more it runs due to adaptive retry strategy of the waiting time).\nProcedure\n\nRun git checkout michelkaporin/smoketest in vscode repository. Currently the code lives on my branch only.\ncd test/smoke\nnpm install\nnpm test -- --latest \"path/to/binary\" --stable  \"path/to/binary\", where latest argument is the path to VS Code executable to conduct testing, and stable is previous stable version (in order to run 'Data Migration' tests). If the latter argument is ommited, 'Data Migration' tests won't run.\n\nExample commands:\nnpm test -- --latest \"C:\\Program Files (x86)\\Microsoft VS Code Insiders\\Code - Insiders.exe\" --stable \"C:\\Program Files (x86)\\Microsoft VS Code\\Code.exe\"\nor\nnpm test -- --latest \"/Applications/Visual Studio Code - Insiders.app/Contents/MacOS/Electron\" --stable \"/Applications/Visual Studio Code.app/Contents/MacOS/Electron\"\nKnown problems\n\n**#27452 bug results in very many failing tests on OS X, once that is fixed, all should pass.\nSpectron spawns multiple cmd windows on Windows OS. This leads to VS Code window to be overlapped by another one. To look at what the test does you need to click on the VS Code title bar to focus on it in every test. (electron-userland/spectron#60)\n\nIf you get failing tests, please dump the log with failed error messages here.\nAny feedback is appreciated 👍"
+            }
+        }
+    },
+    {
+    "repository": {
+        "issue": {
+          "author": {
+            "login": "CleyFaye"
+          },
+          "number": 90455,
+          "resourcePath": "/microsoft/vscode/issues/90455",
+          "state": "CLOSED",
+          "publishedAt": "2020-02-11T15:05:12Z",
+          "closedAt": "2020-02-12T06:27:11Z",
+          "title": "Inconsistency between unsaved file dialog and unsaved workspace dialog",
+          "bodyText": "Issue Type: Bug\nWhen closing files with unsaved changes, a dialog open with the three possible actions: \"Don't save\", \"Cancel\", \"Save\" in that order.\nWhen closing an unsaved workspace, a similar dialog appear with actions \"Save\", \"Cancel\", \"Don't save\" in that order.\nThat feel inconsistent and could cause confusion. The order should probably be the same in every dialog.\nVS Code version: Code 1.42.0 (ae08d54, 2020-02-06T10:51:23.649Z)\nOS version: Linux x64 5.0.0-38-generic\n\nSystem Info\n\n\n\nItem\nValue\n\n\n\n\nCPUs\nIntel(R) Core(TM) i5-7260U CPU @ 2.20GHz (4 x 3340)\n\n\nGPU Status\n2d_canvas: enabledflash_3d: enabledflash_stage3d: enabledflash_stage3d_baseline: enabledgpu_compositing: enabledmetal: disabled_offmultiple_raster_threads: enabled_onoop_rasterization: disabled_offprotected_video_decode: unavailable_offrasterization: disabled_softwareskia_renderer: disabled_offsurface_control: disabled_offsurface_synchronization: enabled_onvideo_decode: unavailable_offviz_display_compositor: enabled_onviz_hit_test_surface_layer: disabled_offwebgl: enabledwebgl2: enabled\n\n\nLoad (avg)\n1, 1, 1\n\n\nMemory (System)\n11.62GB (0.87GB free)\n\n\nProcess Argv\nremarques.md --no-sandbox\n\n\nScreen Reader\nno\n\n\nVM\n0%\n\n\n\nExtensions (14)\n\n\n\nExtension\nAuthor (truncated)\nVersion\n\n\n\n\nnpm-intellisense\nchr\n1.3.0\n\n\npath-intellisense\nchr\n1.4.2\n\n\nvscode-eslint\ndba\n2.0.15\n\n\nvscode-npm-script\neg2\n0.3.11\n\n\nsearch-node-modules\njas\n1.3.0\n\n\nvscode-exec-node\nmir\n0.5.1\n\n\nvscode-language-pack-fr\nMS-\n1.42.2\n\n\ncpptools\nms-\n0.26.3\n\n\ndebugger-for-chrome\nmsj\n4.12.6\n\n\nvscode-npm-scripts\ntra\n0.2.1\n\n\nvim\nvsc\n1.12.4\n\n\nnodejs-extension-pack\nwad\n0.1.9\n\n\nvscode-todo-highlight\nway\n1.0.4\n\n\nJavaScriptSnippets\nxab\n1.7.2"
+        }
+      }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "Yjq14114"
+                },
+                "number": 60013,
+                "resourcePath": "/microsoft/vscode/issues/60013",
+                "state": "CLOSED",
+                "publishedAt": "2018-10-05T08:57:31Z",
+                "closedAt": "2018-10-05T08:59:30Z",
+                "title": "terminal ",
+                "bodyText": "Issue Type: Bug\ni open terminal, but  its look like is not work !\nVS Code version: Code 1.27.2 (f46c4c4, 2018-09-12T16:17:45.060Z)\nOS version: Windows_NT x64 10.0.17763\n\nSystem Info\n\n\n\nItem\nValue\n\n\n\n\nCPUs\nIntel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz (8 x 2592)\n\n\nGPU Status\n2d_canvas: enabledchecker_imaging: disabled_offflash_3d: enabledflash_stage3d: enabledflash_stage3d_baseline: enabledgpu_compositing: enabledmultiple_raster_threads: enabled_onnative_gpu_memory_buffers: disabled_softwarerasterization: enabledvideo_decode: enabledvideo_encode: enabledwebgl: enabledwebgl2: enabled\n\n\nMemory (System)\n15.88GB (8.52GB free)\n\n\nProcess Argv\nG:\\Program Files\\Microsoft VS Code\\Code.exe\n\n\nScreen Reader\nno\n\n\nVM\n67%\n\n\n\nExtensions (15)\n\n\n\nExtension\nAuthor (truncated)\nVersion\n\n\n\n\nproject-manager\nale\n9.0.1\n\n\nvscode-svgviewer\ncss\n1.4.6\n\n\nvscode-eslint\ndba\n1.6.0\n\n\nxml\nDot\n2.3.2\n\n\ngitlens\neam\n8.5.6\n\n\nprettier-vscode\nesb\n1.6.1\n\n\nvue-format\nfeb\n0.1.2\n\n\ngit-project-manager\nfel\n1.7.1\n\n\nvscode-attrs-sorter\nmrm\n2.1.0\n\n\ncpptools\nms-\n0.19.0\n\n\nvetur\noct\n0.13.0\n\n\nvscode-icons\nrob\n7.27.0\n\n\npartial-diff\nryu\n1.4.0\n\n\nvim\nvsc\n0.16.6\n\n\ngitblame\nwad\n2.4.4"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "warpdesign"
+                },
+                "number": 28823,
+                "resourcePath": "/microsoft/vscode/issues/28823",
+                "state": "CLOSED",
+                "publishedAt": "2017-06-15T16:09:18Z",
+                "closedAt": "2017-06-15T16:11:44Z",
+                "title": "You can set themes that are disabled in extensions panel",
+                "bodyText": "VSCode Version: insider\nOS Version: Windows 10 64bit\n\nThemes appear in the extensions panel and can be disabled just like normal extensions.\nI think disabled themes shouldn't appear when running the preferences: Color Theme command. Right now you may set a theme that's disabled wihch is a bit weird."
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "imeoer"
+                },
+                "number": 32275,
+                "resourcePath": "/microsoft/vscode/issues/32275",
+                "state": "CLOSED",
+                "publishedAt": "2017-08-11T02:41:35Z",
+                "closedAt": "2017-11-30T19:41:12Z",
+                "title": "The incorrect IME position when the first character is entered",
+                "bodyText": "VSCode Version: Code 1.15.0 (8b95971, 2017-08-09T20:06:21.685Z)\nOS Version: Darwin x64 17.0.0\nExtensions:\n\n\n\n\nExtension\nAuthor (truncated)\nVersion\n\n\n\n\nmaterial-icon-theme\nPKi\n2.1.0\n\n\nvscode-docker\nPet\n0.0.16\n\n\ncode-settings-sync\nSha\n2.8.2\n\n\ngo\nTwe\n0.0.1\n\n\nhtml-css-class-completion\nZig\n1.8.0\n\n\nvscode-color\nans\n0.4.5\n\n\nvscode-eslint\ndba\n1.2.11\n\n\npython\ndon\n0.7.0\n\n\nvscode-babel-coloring\ndza\n0.0.4\n\n\ngitlens\neam\n4.3.3\n\n\nvscode-html-css\necm\n0.1.7\n\n\ntslint\neg2\n0.17.0\n\n\nnim\nkos\n0.5.26\n\n\nGo\nluk\n0.6.63\n\n\nmarkdown-shortcuts\nmdi\n0.8.1\n\n\nprettify-json\nmoh\n0.0.3\n\n\ndebugger-for-chrome\nmsj\n3.1.7\n\n\ncolor-highlight\nnau\n2.3.0\n\n\nvetur\noct\n0.9.3\n\n\nproto\npet\n0.0.2\n\n\nRuby\nreb\n0.13.0\n\n\nPostCSS\nric\n1.0.1\n\n\nstylelint\nshi\n0.28.0\n\n\nbabelrc\nwad\n1.0.0\n\n\nvscode-import-cost\nwix\n2.0.0\n\n\nvscode-proto3\nzxh\n0.1.2\n\n\n\n(5 theme extensions excluded)\n\nSteps to Reproduce:\n\nSwitch to Chinese IME (e.g. Sougou / Baidu)\nSee the screenshot:\n\n\nI reproduced this problem in the monaco editor, I think it should be the text input implementation issue using textarea, did not find this problem in ace editor.\n\nReproduces without extensions: Yes"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "sagg155"
+                },
+                "number": 58686,
+                "resourcePath": "/microsoft/vscode/issues/58686",
+                "state": "CLOSED",
+                "publishedAt": "2018-09-14T10:48:07Z",
+                "closedAt": "2018-09-25T15:08:05Z",
+                "title": "Debugger attached. Waiting for the debugger to disconnect...",
+                "bodyText": "VSCode Version:  1.27.2\nOS Version: Windows 10 Pro 64bit OS,x64-based processor\n\nSteps to Reproduce:\n\nStart Node Debugger\nError\nDebugger attached.\nWaiting for the debugger to disconnect...\n\nDoes this issue occur when all extensions are disabled?: Yes\nI have tried everything as follows  but nothing works->\n\nrestarted vs code\nrestarted my machine\nuninstall node,npm,vs code\n\nplease suggest some solution for this bug.Basically i'm debugging typescript file."
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "geuis"
+                },
+                "number": 51539,
+                "resourcePath": "/microsoft/vscode/issues/51539",
+                "state": "CLOSED",
+                "publishedAt": "2018-06-10T03:22:16Z",
+                "closedAt": "2018-06-11T08:42:20Z",
+                "title": "Local editor settings not being overridden by ESLint settings",
+                "bodyText": "VSCode Version: Version 1.24.0 (1.24.0)\nOS Version: Mac High Sierra 10.13.4\nESLint Extension: 1.4.12\n\nSteps to Reproduce:\n\nThe default behavior for VSCode is to add spaces to objects:\n\nconst x = { a: 123 };\n\n\nI have a .eslintrc config setup with the rule \"object-curly-spacing\": [\"error\", \"never\"]. Linting occurs and reports the default spacing behavior as an error as expected.\nThis behavior can be overridden in the VSCode settings via \"javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces\": false\nI was expecting that the default behavior of VSCode would be overridden by the ESLint rules when formatting code.\n\n\nDoes this issue occur when all extensions are disabled?: No. The ESLint extension must be installed for VSCode to utilize the .eslintrc rules.\nThis may be an issue correctable in the ESLint extension. If so I will move this issue to that project."
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "mohsen1"
+                },
+                "number": 1052,
+                "resourcePath": "/microsoft/vscode/issues/1052",
+                "state": "CLOSED",
+                "publishedAt": "2015-12-06T18:52:56Z",
+                "closedAt": "2015-12-08T11:41:41Z",
+                "title": "Incorrect error in TypeScript code",
+                "bodyText": "I'm using version df35236\nFor this code I get an incorrect error.\n  /**\n   * Removes all the children from `<div class=\"children\"></div>` element\n   *\n  */\n  removeChildren() {\n    if (this.element.querySelector('div.children')) {\n      this.element.removeChild(this.element.querySelector('div.children'));\n    }\n  }\nTypeScript compiler does not complain for this code but VSCode throws this error:"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "Apostata"
+                },
+                "number": 59547,
+                "resourcePath": "/microsoft/vscode/issues/59547",
+                "state": "CLOSED",
+                "publishedAt": "2018-09-27T12:38:37Z",
+                "closedAt": "2018-10-04T15:12:13Z",
+                "title": "After update throwing : Couldn't find declaration for many modules ",
+                "bodyText": "It was working before.\nnow at import the module:\nimport { Validation } from 'bunnyjs/src/Validation';\n[ts]\nCould not find a declaration file for module 'bunnyjs/src/Validation'. 'c:/Dev/Notanet/frontend-env/cockpit/node_modules/bunnyjs/src/Validation.js' implicitly has an 'any' type.\nTry npm install @types/bunnyjs if it exists or add a new declaration (.d.ts) file containing declare module 'bunnyjs';"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "vscodeerrors"
+                },
+                "number": 59227,
+                "resourcePath": "/microsoft/vscode/issues/59227",
+                "state": "CLOSED",
+                "publishedAt": "2018-09-24T12:41:15Z",
+                "closedAt": "2018-09-24T17:16:27Z",
+                "title": " Cannot read property 'forEach' of null",
+                "bodyText": "Issue Id: 35acb833-bda7-37c3-14da-3ab8f360751bVersions - 1.28.0-insider (9/20/2018 2:13:44 PM)Stack TypeError: Cannot read property 'forEach' of null/vs/base/browser/ui/menu/menu.ts#158:13 (style)/vs/platform/theme/common/styler.ts#53:20 (call)/vs/base/common/event.ts#140:15 (fire)/vs/workbench/services/themes/electron-browser/workbenchThemeService.ts#350:26 (applyTheme)/vs/workbench/services/themes/electron-browser/workbenchThemeService.ts#295:17 (onComplete)/vs/base/common/winjs.base.js#1191:0 (_notify)/vs/base/common/winjs.base.js#867:0 (enter)/vs/base/common/winjs.base.js#1089:0 (_run)/vs/base/common/winjs.base.js#1057:0 (onComplete)/vs/base/common/winjs.base.js#1587:0 (then)/vs/base/common/winjs.base.js#762:0 (enter)/vs/base/common/winjs.base.js#1089:0 (_run)/vs/base/common/winjs.base.js#1073:0    at Object.g [as _notify] (out/vs/workbench/workbench.m"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "bpasero"
+                },
+                "number": 32946,
+                "resourcePath": "/microsoft/vscode/issues/32946",
+                "state": "CLOSED",
+                "publishedAt": "2017-08-22T10:52:31Z",
+                "closedAt": "2017-08-25T14:23:02Z",
+                "title": "Multi root: revisit workspace file format",
+                "bodyText": "/cc @sandy081"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "xiaogwu"
+                },
+                "number": 31170,
+                "resourcePath": "/microsoft/vscode/issues/31170",
+                "state": "CLOSED",
+                "publishedAt": "2017-07-21T00:42:35Z",
+                "closedAt": "2017-07-21T08:40:50Z",
+                "title": "Show Preview of file while in Go to File... ",
+                "bodyText": "Feature Request\nIt would be awesome if when using Go to File... (Command-P) that a preview of the current highlighted file is show and as you up/down arrow key a different file, you see a preview of the current selected file."
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "Peteous"
+                },
+                "number": 25704,
+                "resourcePath": "/microsoft/vscode/issues/25704",
+                "state": "CLOSED",
+                "publishedAt": "2017-04-30T17:59:46Z",
+                "closedAt": "2017-05-04T08:10:38Z",
+                "title": "Git version control can't interact with repos that are already local on the machine.",
+                "bodyText": "VSCode Version: Code 1.11.2 (6eaebe3, 2017-04-13T07:56:42.517Z)\nOS Version: Darwin x64 16.6.0\nExtensions:\n\n\n\n\nExtension\nAuthor\nVersion\n\n\n\n\npython\ndonjayamanne\n0.6.3\n\n\ncpptools\nms-vscode\n0.11.0\n\n\nvscode-arduino\nvsciot-vscode\n0.1.2\n\n\n\n\nSteps to Reproduce:\n\nopen VS Code\nopen file from git repo already local on machine\ntry to commit from git version control panel\nfails\nsad day"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "rolandbrake"
+                },
+                "number": 39462,
+                "resourcePath": "/microsoft/vscode/issues/39462",
+                "state": "CLOSED",
+                "publishedAt": "2017-12-02T11:17:10Z",
+                "closedAt": "2017-12-03T13:15:01Z",
+                "title": "can we go back please the new logo is so ugly!",
+                "bodyText": ""
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "alexdima"
+                },
+                "number": 27712,
+                "resourcePath": "/microsoft/vscode/issues/27712",
+                "state": "CLOSED",
+                "publishedAt": "2017-05-31T09:04:07Z",
+                "closedAt": "2018-09-11T08:32:59Z",
+                "title": "Cannot click on nodejs built-in modules",
+                "bodyText": "Testing #26203\nHave a js file with the following:\nfunction fib(n) {\n    if (n === 1 || n === 0) {\n        throw new Error('Unexpected');\n    }\n    return fib(n - 1) + fib(n - 2);\n}\nfib(3)\n\nStart debugging (F5)\nThe exception widget shows up at the correct location\nThe module.js is clickable but it tries to open a file called module.js from the workspace instead of opening the nodejs built-in module\nClicking on module.js from the call stack works correctly, so perhaps the debug adapter needs to be asked about how to resolve links in the error stackframe, and only if it doesn't know how to do it, the default should be to fallback to trying to open files?\n\n\nOther use-cases would be debugging a remote target where the error stack trace would contain the file paths as installed on the remote machine and these file paths would need to be translated according to the debug configuration to the local filesystem, or otherwise opened in readonly mode by fetching their sources from nodejs\nfyi @weinand @isidorn"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "BenjaVR"
+                },
+                "number": 38009,
+                "resourcePath": "/microsoft/vscode/issues/38009",
+                "state": "CLOSED",
+                "publishedAt": "2017-11-10T01:15:17Z",
+                "closedAt": "2017-11-10T17:16:45Z",
+                "title": "Terminal sidebar close button not visible",
+                "bodyText": "VSCode Version: Code 1.18.0 (dcee220, 2017-11-08T21:19:36.079Z)\nOS Version: Windows_NT ia32 10.0.15063\nExtensions:\n\n\n\n\nExtension\nAuthor (truncated)\nVersion\n\n\n\n\nhtml-snippets\nabu\n0.1.0\n\n\ndjango-snippets\nbib\n1.1.0\n\n\nvscode-styled-jsx\nbla\n0.1.1\n\n\nnpm-intellisense\nchr\n1.3.0\n\n\npath-intellisense\nchr\n1.4.2\n\n\ngitignore\ncod\n0.5.0\n\n\nvscode-eslint\ndba\n1.4.3\n\n\ngitlens\neam\n6.0.0\n\n\ntslint\neg2\n1.0.16\n\n\nvscode-npm-script\neg2\n0.3.3\n\n\nvsc-material-theme\nEqu\n1.1.1\n\n\nprettier-vscode\nesb\n0.24.0\n\n\nphp-debug\nfel\n1.11.1\n\n\nphp-intellisense\nfel\n1.5.4\n\n\nbeautify\nHoo\n1.1.1\n\n\nintellij-idea-keybindings\nk--\n0.2.16\n\n\nvscode-github\nKni\n0.23.0\n\n\nMagicPython\nmag\n1.0.12\n\n\nKotlin\nmat\n1.3.0\n\n\nHTMLHint\nmka\n0.4.0\n\n\nvscode-apache\nmrm\n1.1.1\n\n\nvscode-attrs-sorter\nmrm\n2.1.0\n\n\nvscode-jade-snippets\nmrm\n1.0.1\n\n\nvscode-pugbeautify\nmrm\n1.0.2\n\n\nvscode-puglint\nmrm\n2.3.0\n\n\nvscode-scss\nmrm\n0.6.2\n\n\nvscode-stylefmt\nmrm\n2.5.0\n\n\npython\nms-\n0.8.0\n\n\ncpptools\nms-\n0.14.2\n\n\ncsharp\nms-\n1.13.0\n\n\nPowerShell\nms-\n1.5.0\n\n\ntypescript-javascript-grammar\nms-\n0.0.24\n\n\nmaterial-icon-theme\nPKi\n2.2.4\n\n\nvscode-template-literal-editor\npli\n0.8.4\n\n\njava\nred\n0.14.0\n\n\nvscode-icons\nrob\n7.17.0\n\n\nprettier-eslint-vscode\nRob\n0.7.1\n\n\ncode-settings-sync\nSha\n2.8.5\n\n\nshader\nsle\n1.1.2\n\n\ntwig\nwha\n1.0.2\n\n\njinja\nwho\n0.0.8\n\n\nReactSnippets\nxab\n1.4.0\n\n\n\n\nSteps to Reproduce:\n\nPut the terminal panel to the sidebar.\nMake that window smaller.\nClose button is not visible, and not reachable in any way.\n\nAs you see here, the 'X' button should be in the upper right.\n\nReproduces without extensions: Yes"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "bpasero"
+                },
+                "number": 19662,
+                "resourcePath": "/microsoft/vscode/issues/19662",
+                "state": "CLOSED",
+                "publishedAt": "2017-02-01T06:29:42Z",
+                "closedAt": "2017-02-02T16:17:37Z",
+                "title": "Do not expect app.getPath('userData') to be there before app.once('ready')",
+                "bodyText": "There is a discussion going on in 08a1700 where @chrmarti saw an issue on startup for new users that never started Code before. I never saw this issue but the fix seems odd to me: we now suddenly create the directory (userData) via mkdirp that is owned by Electron/Chrome, which seems wrong. It should be created by the framework, not us.\nCan we move the getNodeCachedDataDir() into the app.once('ready') callback? That is the place where all code should go that assumes a certain directory structure to be present, not before."
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "bhoreanna"
+                },
+                "number": 69295,
+                "resourcePath": "/microsoft/vscode/issues/69295",
+                "state": "CLOSED",
+                "publishedAt": "2019-02-24T06:32:52Z",
+                "closedAt": "2019-02-24T06:33:13Z",
+                "title": "run code",
+                "bodyText": "Issue Type: Bug\ncodes are not able to run the program\nVS Code version: Code 1.30.1 (dea8705, 2018-12-18T18:12:07.165Z)\nOS version: Windows_NT x64 6.1.7600\n\nSystem Info\n\n\n\nItem\nValue\n\n\n\n\nCPUs\nIntel(R) Core(TM) i7-2670QM CPU @ 2.20GHz (8 x 2195)\n\n\nGPU Status\n2d_canvas: enabledchecker_imaging: disabled_offflash_3d: enabledflash_stage3d: enabledflash_stage3d_baseline: enabledgpu_compositing: enabledmultiple_raster_threads: enabled_onnative_gpu_memory_buffers: disabled_softwarerasterization: unavailable_softwarevideo_decode: enabledvideo_encode: enabledwebgl: enabledwebgl2: unavailable_off\n\n\nMemory (System)\n3.95GB (0.90GB free)\n\n\nProcess Argv\n\n\n\nScreen Reader\nno\n\n\nVM\n0%\n\n\n\nExtensions (5)\n\n\n\nExtension\nAuthor (truncated)\nVersion\n\n\n\n\ngitlens\neam\n9.5.1\n\n\ntslint\neg2\n1.0.43\n\n\nauto-close-tag\nfor\n0.5.6\n\n\nLiveServer\nrit\n5.5.1\n\n\nautoimport\nste\n1.5.3"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "DominicTobias"
+                },
+                "number": 45409,
+                "resourcePath": "/microsoft/vscode/issues/45409",
+                "state": "CLOSED",
+                "publishedAt": "2018-03-09T14:40:59Z",
+                "closedAt": "2018-03-09T20:44:21Z",
+                "title": "Go to definition (F12) doesn't work in node_modules with TS",
+                "bodyText": "VSCode Version: 1.20.1\nOS Version: Windows 7\n\nSteps to Reproduce:\n\nPress F12 on an import in a node_module file\n\nBehaviour:\nGoes to the Typescript definition same as clicking \"Go to Type Definition\".\nExpected:\nShould go to the implementation."
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "mhinton"
+                },
+                "number": 81867,
+                "resourcePath": "/microsoft/vscode/issues/81867",
+                "state": "CLOSED",
+                "publishedAt": "2019-10-02T20:35:35Z",
+                "closedAt": "2019-10-14T15:11:57Z",
+                "title": "Horizontal split hides the line the cursor is on if it's below the midpoint of the view",
+                "bodyText": "Issue Type: Bug\nHave the current line positioned below the middle of the viewport. Create a horizontal split. The line with the cursor is now hidden in both views. This is super annoying. The line with the cursor should be visible in both views.\nhttps://cl.ly/14374e89477a\nVS Code version: Code 1.38.1 (b37e54c, 2019-09-11T13:31:32.854Z)\nOS version: Darwin x64 18.7.0\n\nSystem Info\n\n\n\nItem\nValue\n\n\n\n\nCPUs\nIntel(R) Core(TM) i7-4870HQ CPU @ 2.50GHz (8 x 2500)\n\n\nGPU Status\n2d_canvas: enabledflash_3d: enabledflash_stage3d: enabledflash_stage3d_baseline: enabledgpu_compositing: enabledmultiple_raster_threads: enabled_onnative_gpu_memory_buffers: enabledoop_rasterization: disabled_offprotected_video_decode: unavailable_offrasterization: enabledskia_deferred_display_list: disabled_offskia_renderer: disabled_offsurface_synchronization: enabled_onvideo_decode: enabledviz_display_compositor: disabled_offwebgl: enabledwebgl2: enabled\n\n\nLoad (avg)\n2, 2, 2\n\n\nMemory (System)\n16.00GB (1.01GB free)\n\n\nProcess Argv\n\n\n\nScreen Reader\nno\n\n\nVM\n0%"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "yufw"
+                },
+                "number": 75202,
+                "resourcePath": "/microsoft/vscode/issues/75202",
+                "state": "CLOSED",
+                "publishedAt": "2019-06-10T14:40:17Z",
+                "closedAt": "2019-10-10T06:05:06Z",
+                "title": "Extra pixels under status bar",
+                "bodyText": "There are some extra pixels under the status bar. Increase the font size to see it more clearly. Also, resizing the window vertically will change the width of the extra pixels.\n\n\n\nVSCode Version: 1.35.0\nOS Version: Windows_NT x64 10.0.18362\n\nSteps to Reproduce:\n\nLaunch VS Code\n\n\nDoes this issue occur when all extensions are disabled?: Yes"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "joaomoreno"
+                },
+                "number": 48692,
+                "resourcePath": "/microsoft/vscode/issues/48692",
+                "state": "CLOSED",
+                "publishedAt": "2018-04-25T17:24:57Z",
+                "closedAt": "2018-04-26T08:13:04Z",
+                "title": "Git clone should use the new progress API",
+                "bodyText": ""
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "spmeesseman"
+                },
+                "number": 72808,
+                "resourcePath": "/microsoft/vscode/issues/72808",
+                "state": "CLOSED",
+                "publishedAt": "2019-04-24T12:20:36Z",
+                "closedAt": "2019-05-06T09:25:15Z",
+                "title": "GIt: Remote Changes Shelf",
+                "bodyText": "For all the GREAT stuff in VSCode, I can't believe there isn't a \"Remote Changes\" shelf in the SCM view for Git repos (i.e. together with the \"Changes\" and \"Staged Changes\" shelves).  The 3rd party SVN extension has this feature, even the old dinosaur Eclipse has it.\nI was even more confused when I didn't find a duplicate in the issues.  Am I missing something?  If I am, could someone please let me know what do Git users do in VSCode (admittedly I am coming from CVS/SVN and am new to Git) to see remote changes? (without using the 3rd party plugin GitLens which is not easy to navigate with all the clutter).  I assume people just don't 'sync' or 'pull' blindly without knowing what changes are coming in?"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "luabud"
+                },
+                "number": 82123,
+                "resourcePath": "/microsoft/vscode/issues/82123",
+                "state": "CLOSED",
+                "publishedAt": "2019-10-08T21:36:57Z",
+                "closedAt": "2019-10-09T18:49:41Z",
+                "title": "Update test explorer beaker icon to match new UI ",
+                "bodyText": "I believe right now this is the icon that is being used by VS Code: https://github.com/microsoft/vscode/blob/master/src/vs/workbench/api/browser/media/test.svg\nIt'd be great if that could be updated to match the new UI."
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "bschlenk"
+                },
+                "number": 43294,
+                "resourcePath": "/microsoft/vscode/issues/43294",
+                "state": "CLOSED",
+                "publishedAt": "2018-02-09T08:46:05Z",
+                "closedAt": "2019-10-23T17:51:43Z",
+                "title": "Make \"editor.scrollBeyondLastLine\" configurable beyond true or false",
+                "bodyText": "I'm the kind of person who always presses enter 5 times after running a shell command. I like having some space. But too much space leaves me feeling vulnerable, as if I was stranded in the middle of the ocean. This all or nothing approach with the \"editor.scrollBeyondLastLine\" option isn't working for me.\nCan this option be configurable by the line number? If I want to be able to scroll past the bottom by 5 lines, I should be able to set the value to 5. If I want to have the current behavior, I could set the value to true, or \"all\"."
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "mherodev"
+                },
+                "number": 33444,
+                "resourcePath": "/microsoft/vscode/issues/33444",
+                "state": "CLOSED",
+                "publishedAt": "2017-08-29T19:01:30Z",
+                "closedAt": "2017-08-31T02:34:14Z",
+                "title": "\"Go to File...\" shows files in search.exclude",
+                "bodyText": "\"Go to File...\" is essentially a search operation and should be be managed by search.exclude, or optionally an additional config, e.g. goto.exclude. Typical use-case is having Explorer reflect true contents of project (e.g. not hiding generated files), while other operations are for navigating files one will edit.\n\nVSCode Version: @latest\nOS Version: OS X\n\nSteps to Reproduce:\n\nInclude node_modules in search.exclude, but not in files.exclude in settings\ncmd + p\nSee excluded files appearing in results"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "martanko"
+                },
+                "number": 29764,
+                "resourcePath": "/microsoft/vscode/issues/29764",
+                "state": "CLOSED",
+                "publishedAt": "2017-06-28T14:39:00Z",
+                "closedAt": "2017-11-25T07:23:50Z",
+                "title": "Unable to open file with leading space in file name when passed as a parameter from command line",
+                "bodyText": "VSCode Version: 1.13.1\nOS Version: Win10 Pro\n\nSteps to Reproduce:\n\nCreate a file with leading space, e.g. \" my file.txt\"\nWhilst in the text file folder, pass the file name to VS Code from command line, e.g. \"c:\\Program Files (x86)\\Microsoft VS Code\\Code.exe\" \" my file.txt\"; VSCode will try to open file \"my file.txt\" (space removed).\nWhen doing the same with full file path, e.g. \"c:\\Program Files (x86)\\Microsoft VS Code\\Code.exe\" \"c:\\ my file.txt\"; VSCode will not open any file\n\nNote: When opening from within Code by File->Open, everything works fine\nReproduces without extensions: Yes"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "smlombardi"
+                },
+                "number": 25790,
+                "resourcePath": "/microsoft/vscode/issues/25790",
+                "state": "CLOSED",
+                "publishedAt": "2017-05-02T17:03:29Z",
+                "closedAt": "2017-05-08T14:25:44Z",
+                "title": "Closing script tags not colored not using ligatures",
+                "bodyText": "VSCode Version: Code - Insiders 1.12.0-insider (aa05dac, 2017-05-02T00:04:13.700Z)\nOS Version: Darwin x64 16.5.0\nExtensions:\n\n\n\n\nExtension\nAuthor\nVersion\n\n\n\n\nng-template\nAngular\n0.1.3\n\n\ncode-settings-sync\nShan\n2.6.2\n\n\nsort-lines\nTyriar\n1.2.0\n\n\nBookmarks\nalefragnani\n0.14.1\n\n\nproject-manager\nalefragnani\n0.15.1\n\n\npath-intellisense\nchristian-kohler\n1.2.0\n\n\nvscode-eslint\ndbaeumer\n1.2.8\n\n\nvscode-html-css\necmel\n0.1.2\n\n\ntslint\neg2\n0.12.0\n\n\nAngular2\njohnpapa\n2.2.3\n\n\nvscode-icon-theme\njtlowe\n1.5.0\n\n\ntheme-karyfoundation-themes\nkaryfoundation\n11.1.0\n\n\nHTMLHint\nmkaufman\n0.3.3\n\n\nvscode-autoprefixer\nmrmlnc\n2.0.0\n\n\nvscode-stylefmt\nmrmlnc\n2.3.0\n\n\nangular2-inline\nnatewallace\n0.0.17\n\n\ntypescript-hero\nrbbit\n0.12.0\n\n\nproject-snippets\nrebornix\n0.5.0\n\n\nstylelint\nshinnn\n0.24.0\n\n\ndarcula-extended\nsmlombardi\n3.3.2\n\n\nslime\nsmlombardi\n1.15.0\n\n\ntheme-tesla\nsmlombardi\n6.0.0\n\n\nchange-case\nwmaurer\n1.0.0\n\n\n\n\nSteps to Reproduce:\n\nin script tags, the opening angle bracket in closing </script> tags and no longer colored like other tag brackets:\n\n\nfor comparison, some non-script tags:\n\nFurthermore, you can see that this font, Fira Code, uses ligatures for the </ yet the script tags no longer are using them.\nBoth things happened in the current build."
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "bobbrow"
+                },
+                "number": 28203,
+                "resourcePath": "/microsoft/vscode/issues/28203",
+                "state": "CLOSED",
+                "publishedAt": "2017-06-07T20:51:07Z",
+                "closedAt": "2017-06-09T10:30:37Z",
+                "title": "Update protocol document for CompletionItemKind and SymbolKind?",
+                "bodyText": "The C/C++ extension has been following the protocol here to define our protocol messages (the bulk of our extension is written in C++) https://github.com/Microsoft/language-server-protocol/blob/master/protocol.md\nI stumbled on this thread #2628 and saw commits that looked like they changed the enum values of CompletionItemKind and SymbolKind.  So it appears that we are sending incorrect values back to VS Code now.\nI just wanted to double-check... are the enum values in VS Code now different than the ones in the protocol?"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "atishay"
+                },
+                "number": 50004,
+                "resourcePath": "/microsoft/vscode/issues/50004",
+                "state": "CLOSED",
+                "publishedAt": "2018-05-16T22:21:01Z",
+                "closedAt": "2018-05-30T12:56:30Z",
+                "title": "[PHP] provideCompletionItems is not called for items inside of -> methods and also for variables starting with $",
+                "bodyText": "Issue Type: Bug\nIf you register a registerCompletionItemProvider in an exptension for PHP, it is not always called and completion items are not provided in the following cases:\n\nVariable name starts with $\n\n arr_item = new ClassItem;\n a                         // Completion Item Provider called\n$arr_item = new ClassItem;\n$a                          // Completion Item Provider not called\n\nArrow functions\n\n arr_item = new ClassItem;\n arr_item.t          // Completion Item provider called for the keystroke t \n arr_item = new ClassItem;\n arr_item->t          // Completion Item provider not called for the keystroke t \nNOTE: The completion item provider is not registered with any trigger characters.\nVS Code version: Code 1.23.0 (7c7da59, 2018-05-03T15:23:14.634Z)\nOS version: Darwin x64 17.5.0\n\nSystem Info\n\n\n\nItem\nValue\n\n\n\n\nCPUs\nIntel(R) Core(TM) i7-4980HQ CPU @ 2.80GHz (8 x 2800)\n\n\nGPU Status\n2d_canvas: enabledflash_3d: enabledflash_stage3d: enabledflash_stage3d_baseline: enabledgpu_compositing: enabledmultiple_raster_threads: enabled_onnative_gpu_memory_buffers: enabledrasterization: enabledvideo_decode: enabledvideo_encode: enabledvpx_decode: enabledwebgl: enabledwebgl2: enabled\n\n\nLoad (avg)\n3, 3, 3\n\n\nMemory (System)\n16.00GB (0.02GB free)\n\n\nProcess Argv\n/Applications/Visual Studio Code.app/Contents/MacOS/Electron -psn_0_10988154\n\n\nScreen Reader\nno\n\n\nVM\n0%\n\n\n\nExtensions (37)\n\n\n\nExtension\nAuthor (truncated)\nVersion\n\n\n\n\nMochaSnippets\nAla\n0.0.1\n\n\nAll-Autocomplete\nAti\n0.0.12\n\n\nvscode-markdownlint\nDav\n0.16.0\n\n\nxml\nDot\n1.9.2\n\n\nEditorConfig\nEdi\n0.12.1\n\n\njquery-snippets\nHri\n1.0.0\n\n\nlatex-workshop\nJam\n5.4.0\n\n\nvscode-jest\nOrt\n2.7.2\n\n\ncode-settings-sync\nSha\n2.9.2\n\n\nquokka-vscode\nWal\n1.0.124\n\n\nhtml-css-class-completion\nZig\n1.17.1\n\n\njslint\najh\n1.2.1\n\n\ncopy-relative-path\nale\n0.0.2\n\n\nnpm-intellisense\nchr\n1.3.0\n\n\ngitignore\ncod\n0.5.0\n\n\nriot-tag\ncri\n0.1.7\n\n\nvscode-eslint\ndba\n1.4.9\n\n\ntslint\neg2\n1.0.28\n\n\nvscode-npm-script\neg2\n0.3.4\n\n\nphp-intellisense\nfel\n2.3.1\n\n\nauto-close-tag\nfor\n0.5.6\n\n\ncode-runner\nfor\n0.9.3\n\n\nginfuru-vscode-jekyll-syntax\ngin\n0.0.5\n\n\ndocthis\njoe\n0.6.0\n\n\nsublime-babel-vscode\njos\n0.2.10\n\n\nprettify-json\nmoh\n0.0.3\n\n\nextension-manifest-editor\nms-\n0.1.5\n\n\npython\nms-\n2018.4.0\n\n\ncpptools\nms-\n0.17.0\n\n\nsublime-keybindings\nms-\n4.0.0\n\n\nwordcount\nms-\n0.1.0\n\n\ndebugger-for-chrome\nmsj\n4.4.3\n\n\nelm\nsbr\n0.17.0\n\n\ncode-spell-checker\nstr\n1.6.10\n\n\nhtml-preview-vscode\ntht\n0.1.1\n\n\ncmake\ntwx\n0.0.17\n\n\nbetter-align\nwwm\n1.1.6"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "zendorx"
+                },
+                "number": 58429,
+                "resourcePath": "/microsoft/vscode/issues/58429",
+                "state": "CLOSED",
+                "publishedAt": "2018-09-11T09:50:35Z",
+                "closedAt": "2018-09-12T07:55:27Z",
+                "title": "UNITY PROJECT STOPS LOADED AFTER UPDATE",
+                "bodyText": "Issue Type: Bug\nAttemped to update project that is not loaded: c:\\work\\IDLE-CITY\\Project\\Assembly-CSharp.csproj\nfail: OmniSharp.MSBuild.ProjectManager\nAttemped to update project that is not loaded: c:\\work\\IDLE-CITY\\Project\\Assembly-CSharp-firstpass.csproj\n[info]: OmniSharp.MSBuild.ProjectManager\nUpdate project: NavMeshComponents\nfail: OmniSharp.MSBuild.ProjectManager\nAttemped to update project that is not loaded: c:\\work\\IDLE-CITY\\Project\\Assembly-CSharp-Editor.csproj\nfail: OmniSharp.MSBuild.ProjectManager\nAttemped to update project that is not loaded: c:\\work\\IDLE-CITY\\Project\\Assembly-CSharp-Editor-firstpass.csproj\nfail: OmniSharp.MSBuild.ProjectManager\nAttemped to update project that is not loaded: c:\\work\\IDLE-CITY\\Project\\NavMeshComponentsEditor.csproj\nVS Code version: Code 1.27.1 (5944e81, 2018-09-06T09:21:18.328Z)\nOS version: Windows_NT x64 10.0.17134\n\nSystem Info\n\n\n\nItem\nValue\n\n\n\n\nCPUs\nIntel(R) Core(TM) i7-5500U CPU @ 2.40GHz (4 x 2394)\n\n\nGPU Status\n2d_canvas: enabledchecker_imaging: disabled_offflash_3d: enabledflash_stage3d: enabledflash_stage3d_baseline: enabledgpu_compositing: enabledmultiple_raster_threads: enabled_onnative_gpu_memory_buffers: disabled_softwarerasterization: enabledvideo_decode: enabledvideo_encode: enabledwebgl: enabledwebgl2: enabled\n\n\nMemory (System)\n15.91GB (7.76GB free)\n\n\nProcess Argv\nC:\\Program Files\\Microsoft VS Code\\Code.exe C:\\work\\IDLE-CITY\\Project -r -g C:\\work\\IDLE-CITY\\Project\\Assets\\Scripts\\MainController.cs:1\n\n\nScreen Reader\nno\n\n\nVM\n0%\n\n\n\nExtensions (8)\n\n\n\nExtension\nAuthor (truncated)\nVersion\n\n\n\n\nbracket-pair-colorizer\nCoe\n1.0.59\n\n\ntransformer\ndak\n1.6.0\n\n\njson-tools\neri\n1.0.2\n\n\npython\nms-\n2018.8.0\n\n\ncsharp\nms-\n1.16.0\n\n\npython\ntht\n0.2.3\n\n\nunity-tools\nTob\n1.0.5\n\n\nunity-debug\nUni\n1.3.0"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "sipi41"
+                },
+                "number": 67571,
+                "resourcePath": "/microsoft/vscode/issues/67571",
+                "state": "CLOSED",
+                "publishedAt": "2019-01-30T18:55:02Z",
+                "closedAt": "2019-01-31T09:47:16Z",
+                "title": "Encoding Files Problem",
+                "bodyText": "I have noticed a weird behavior, every time I create a new file, it is encoded in ANSI format, instead of the one I expect to have, which is \"files.encoding\": \"utf8\"\nAnybody has an idea on why vs is creating files on ANSI instead of UTF-8??\nI noticed this problem when I was trying to load a js file, it said the first character was invalid, but the code was fine... then I checked into the encoding and it was ANSI... saved the file as UTF-8 using notepad and the problem went away... PLEASE HELP"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "AccessibilityTestingTeam-TCS"
+                },
+                "number": 52000,
+                "resourcePath": "/microsoft/vscode/issues/52000",
+                "state": "CLOSED",
+                "publishedAt": "2018-06-15T09:27:15Z",
+                "closedAt": "2018-07-17T15:36:33Z",
+                "title": "Viewlets should focus the first item, not the whole tree",
+                "bodyText": "Environment Details:\nVSCode Version : 1.24.0\nOS Version : Win10\nAdditional Details:\nMAS Violated : MAS 2.1.1\nTools Used : Keyboard\nRepro Steps:\n\nLaunch VS Code.\nNavigate to Activity Bar and select \"Explorer\"(Cntrl+Shift+E) button.\nNavigate to \"File Explorer\" treeview items using \"Tab\".\n\nActual:\nKeyboard focus moves to overall treeview items which is non-interactive. Then using downward arrow keys focus goes to items in treeview.\nExpected:\nKeyboard focus should not move to the items as a whole which is non-interactive. The focus should move to first item in the treeview.\nRecommendations:\nRemove tab-index from the outer  that contains all the treeview items.\nor,\nRefer below link which is repository of bug fixes code snippets:\nhttps://microsoft.sharepoint.com/teams/msenable/mas/pages/browse-fixes.aspx\nUser Impact:\nThe keyboard only users will move to non-interactive elements on the screen which will be time consuming to reach only interactive elements on the page.\nMAS Reference:\nhttps://microsoft.sharepoint.com/teams/msenable/_layouts/15/WopiFrame.aspx?sourcedoc={8492c4eb-c179-40ae-8777-cd044ed725a2}\nAttachment for Reference:\nA11y_VSCode_ViewExplorer_Keyboard_TreeViewItems.pptx\nDoes this issue occur when all extensions are disabled?: Yes"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "Ben07"
+                },
+                "number": 17849,
+                "resourcePath": "/microsoft/vscode/issues/17849",
+                "state": "CLOSED",
+                "publishedAt": "2016-12-27T10:25:06Z",
+                "closedAt": "2017-01-04T00:39:02Z",
+                "title": "[html] format not work correctly in html file when which has style property in tag",
+                "bodyText": "VSCode Version:1.8.0\nOS Version:win 10\n\nSteps to Reproduce:\n\nIn html file,when a tag has style property.It's will influence format\n\nfor example\nwhen I press shift+alt+f to format code\n<div>\n    <p style=\"font-size: 16px;\">hello world</p>\n    <p>xxxholic</p>\n</div>\n\nwill become\n<div>\n    <p style=\"font-size: 15px;\">hello world</p>\n<p>xxxholic</p>\n</div>"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "WToorenburghEasyMarkit"
+                },
+                "number": 34176,
+                "resourcePath": "/microsoft/vscode/issues/34176",
+                "state": "CLOSED",
+                "publishedAt": "2017-09-12T00:13:05Z",
+                "closedAt": "2017-11-24T14:58:07Z",
+                "title": "Editor not rendering soft hyphen",
+                "bodyText": "I ran into a case where a soft hyphen had snuck into a regex expression, yet the character was not visible in the editor. It doesn't seem to render in most places, including Stack Exchange; it has only shown up for me when pasted into a terminal window like cmd.exe or terminal.app. Full disclosure: I don't know if this is behaviour as intended or not. This could also be an Electron issue.\n\n\nVSCode Version: 1.16.0\nOS Version: Windows 10 Pro 15063.540\n\nSteps to Reproduce:\n\nCopy this regex expression using Ctrl+A: http://rubular.com/r/M58qyBfuxF (Link provided as it seems GitHub scrubs the soft hyphen before posting)\nPaste it into Code, and verify that there is no hyphen visible.\nPaste it into a terminal window and verify that there is a hyphen directly after the $\n\n\nReproduces without extensions: Yes\nAlso reproduces with both the default font and Roboto Mono"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "roblourens"
+                },
+                "number": 66866,
+                "resourcePath": "/microsoft/vscode/issues/66866",
+                "state": "CLOSED",
+                "publishedAt": "2019-01-21T20:58:13Z",
+                "closedAt": "2019-01-22T17:55:03Z",
+                "title": "Rename file in explorer styling issue",
+                "bodyText": "Click a file in the explorer to select\nFocus the editor\nFocus the explorer again with the keyboard\nPress enter to rename file\nThe row is highlighted but the input box doesn't appear\nTry renaming other rows, sometimes the input box appears, sometimes not\n\nSometimes the wrong text appears after pressing enter, not sure if that's a separate issue. That happens a couple times in the gif"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "bpasero"
+                },
+                "number": 8167,
+                "resourcePath": "/microsoft/vscode/issues/8167",
+                "state": "CLOSED",
+                "publishedAt": "2016-06-27T04:55:47Z",
+                "closedAt": "2016-06-28T01:15:43Z",
+                "title": "OutputWorker: Cannot read property 'getWorkspace' of undefined",
+                "bodyText": "When opening the output panel:\nshell.js:248 Cannot read property 'getWorkspace' of undefined: TypeError: Cannot read property 'getWorkspace' of undefined\n    at new OutputWorker (file:///Users/bpasero/Development/Microsoft/monaco/out/vs/workbench/parts/output/common/outputWorker.js:25:49)\n    at create (file:///Users/bpasero/Development/Microsoft/monaco/out/vs/base/common/types.js:160:14)\n    at InstantiationService._createInstance (file:///Users/bpasero/Development/Microsoft/monaco/out/vs/platform/instantiation/common/instantiationService.js:141:43)\n    at file:///Users/bpasero/Development/Microsoft/monaco/out/vs/platform/instantiation/common/instantiationService.js:96:33\n    at Module._invokeFactory (file:///Users/bpasero/Development/Microsoft/monaco/out/vs/loader.js:755:52)\n    at Module._complete (file:///Users/bpasero/Development/Microsoft/monaco/out/vs/loader.js:776:34)\n    at Module.resolveDependency (file:///Users/bpasero/Development/Microsoft/monaco/out/vs/loader.js:831:22)\n    at ModuleManager._resolveDependency (file:///Users/bpasero/Development/Microsoft/monaco/out/vs/loader.js:1421:19)\n    at ModuleManager._resolve (file:///Users/bpasero/Development/Microsoft/monaco/out/vs/loader.js:1519:30)\n    at ModuleManager.defineModule (file:///Users/bpasero/Development/Microsoft/monaco/out/vs/loader.js:1027:18)"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "joaomoreno"
+                },
+                "number": 16489,
+                "resourcePath": "/microsoft/vscode/issues/16489",
+                "state": "CLOSED",
+                "publishedAt": "2016-12-05T09:31:02Z",
+                "closedAt": "2017-04-12T07:47:32Z",
+                "title": "Empty line between settings sections",
+                "bodyText": "We could remove that extra line between sections."
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "CharlieIGG"
+                },
+                "number": 67126,
+                "resourcePath": "/microsoft/vscode/issues/67126",
+                "state": "CLOSED",
+                "publishedAt": "2019-01-25T16:21:32Z",
+                "closedAt": "2019-02-22T01:25:27Z",
+                "title": "AutoImport not working for NPM packages, only in JS/JSX",
+                "bodyText": "Issue Type: Bug\nI have this weird issue where AutoImport won't work for NPM packages when using JS or JSX. However it DOES work for:\n\nLocal files\nwhen using Typescript instead of JS\n\nI haven't found any issue quite like this, so I finally decided to ask for clues. Any hints at how to fix this would be greatly appreciated.\nVS Code version: Code 1.30.2 (61122f8, 2019-01-07T22:48:31.260Z)\nOS version: Darwin x64 18.2.0\n\nSystem Info\n\n\n\nItem\nValue\n\n\n\n\nCPUs\nIntel(R) Core(TM) i7-8750H CPU @ 2.20GHz (12 x 2200)\n\n\nGPU Status\n2d_canvas: enabledchecker_imaging: disabled_offflash_3d: enabledflash_stage3d: enabledflash_stage3d_baseline: enabledgpu_compositing: enabledmultiple_raster_threads: enabled_onnative_gpu_memory_buffers: enabledrasterization: enabledvideo_decode: enabledvideo_encode: enabledwebgl: enabledwebgl2: enabled\n\n\nLoad (avg)\n2, 2, 2\n\n\nMemory (System)\n16.00GB (1.47GB free)\n\n\nProcess Argv\n\n\n\nScreen Reader\nno\n\n\nVM\n0%\n\n\n\nExtensions (39)\n\n\n\nExtension\nAuthor (truncated)\nVersion\n\n\n\n\nscss-lint\nada\n0.1.8\n\n\nrails-partial\naki\n0.1.0\n\n\njest-snippets\nand\n1.6.1\n\n\nng-template\nAng\n0.1.11\n\n\nrails\nbun\n0.8.6\n\n\nvscode-gemfile\nbun\n0.0.2\n\n\nsolargraph\ncas\n0.19.1\n\n\nnpm-intellisense\nchr\n1.3.0\n\n\nbracket-pair-colorizer\nCoe\n1.0.61\n\n\nionic3-vs-ionView-snippets\ndan\n1.0.2\n\n\nvscode-markdownlint\nDav\n0.23.0\n\n\nvscode-eslint\ndba\n1.8.0\n\n\ntslint\neg2\n1.0.42\n\n\nvsc-material-theme\nEqu\n2.6.3\n\n\nprettier-vscode\nesb\n1.7.3\n\n\ntodo-tree\nGru\n0.0.115\n\n\nbeautify\nHoo\n1.4.7\n\n\nRelativePath\njak\n1.4.0\n\n\nvscode-styled-components\njpo\n0.0.25\n\n\nrspec-snippets\nkar\n0.0.4\n\n\ncoffeelinter\nlky\n1.4.0\n\n\nvscode-language-babel\nmgm\n0.0.21\n\n\ndotenv\nmik\n1.0.1\n\n\nruby-rubocop\nmis\n0.7.1\n\n\nvscode-elixir\nmjm\n1.1.0\n\n\nvscode-postcss-sorting\nmrm\n3.0.1\n\n\nvscode-scss\nmrm\n0.6.2\n\n\natom-keybindings\nms-\n3.0.5\n\n\ndebugger-for-chrome\nmsj\n4.11.1\n\n\ncolor-highlight\nnau\n2.3.0\n\n\nvscode-docker\nPet\n0.5.1\n\n\nmaterial-icon-theme\nPKi\n3.6.2\n\n\nruby\nreb\n0.21.0\n\n\nslim\nsia\n0.1.2\n\n\naddDocComments\nste\n0.0.8\n\n\nhighlight-matching-tag\nvin\n0.8.6\n\n\nsimple-ruby-erb\nvor\n0.2.1\n\n\nvscode-js-import\nwan\n0.15.4\n\n\nchange-case\nwma\n1.0.0"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "SuEric"
+                },
+                "number": 23459,
+                "resourcePath": "/microsoft/vscode/issues/23459",
+                "state": "CLOSED",
+                "publishedAt": "2017-03-28T16:00:21Z",
+                "closedAt": "2017-03-28T20:40:34Z",
+                "title": "File Tree Automatically Focus when closing a file",
+                "bodyText": "This is not a bug\nIt is more an enhancement\nThing is when I close a tab (file), file tree changes it focus automatically to the now active file; this is really annoying because many times I just open and close many files (as I'm sure other devs do) and I have to scroll all ways down/up again! Hope you improve this.\nNote: Sublime Text doesn't automatically focus the file tree after closing a file."
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "mattiamerlini"
+                },
+                "number": 34204,
+                "resourcePath": "/microsoft/vscode/issues/34204",
+                "state": "CLOSED",
+                "publishedAt": "2017-09-12T07:58:11Z",
+                "closedAt": "2017-09-13T21:56:48Z",
+                "title": "Problem with syntax highlighting (HTML/PHP)",
+                "bodyText": "Problem with syntax highlighting as reported below:\n\n\nVSCode Version: 1.16.0 (1.16.0)\nOS Version: Mac OSX Sierra 10.12.5\n\nSteps to Reproduce:\n\nWrite HTML code\nInsert multiline pieces of PHP code\nSee that the syntax doesn't recognise the open/close php tag"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "dougmartin"
+                },
+                "number": 24249,
+                "resourcePath": "/microsoft/vscode/issues/24249",
+                "state": "CLOSED",
+                "publishedAt": "2017-04-07T17:42:52Z",
+                "closedAt": "2017-04-07T23:51:30Z",
+                "title": "Feature request: Add context menu to branch name in lower left",
+                "bodyText": "Version 1.11 changed the default action when you clicked on the branch name on the lower left from opening an input with git checkout already filled to an input for the git checkout command itself.  The previous pre-filled input was nice in that you could replace \"checkout\" with \"branch\" and create a new branch.\nInstead of cluttering the new popup ui with a branch option you could add a context menu to the branch name in the lower left corner that would contain branch and optionally other common commands which you can access now in the ellipsis menu in the git pane (note: branch is not available right now in the git pane ellipsis menu)."
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "mrichman"
+                },
+                "number": 32716,
+                "resourcePath": "/microsoft/vscode/issues/32716",
+                "state": "CLOSED",
+                "publishedAt": "2017-08-17T12:21:21Z",
+                "closedAt": "2017-09-01T14:44:20Z",
+                "title": "Duplicate setting \"npm.runSilent\" in vscode://defaultsettings/settings.json",
+                "bodyText": "VSCode Version: Code 1.15.1 (41abd21, 2017-08-16T17:15:57.756Z)\nOS Version: Darwin x64 16.7.0\nExtensions:\n\n\n\n\nExtension\nAuthor (truncated)\nVersion\n\n\n\n\nmarkdown-toc\nAla\n1.5.6\n\n\nxml\nDot\n1.9.2\n\n\nEditorConfig\nEdi\n0.9.4\n\n\nmaterial-icon-theme\nPKi\n2.1.0\n\n\nvscode-docker\nPet\n0.0.16\n\n\ncode-settings-sync\nSha\n2.8.2\n\n\nhtml-css-class-completion\nZig\n1.8.0\n\n\nhugofy\nakm\n0.1.0\n\n\nvscode-color\nans\n0.4.5\n\n\ncform\naws\n0.0.10\n\n\nbetter-toml\nbun\n0.2.0\n\n\npath-intellisense\nchr\n1.4.2\n\n\ngitignore\ncod\n0.5.0\n\n\ntypewriter\ndan\n1.0.1\n\n\nvscode-eslint\ndba\n1.2.11\n\n\ngithistory\ndon\n0.2.3\n\n\ngitlens\neam\n4.3.3\n\n\nvscode-npm-script\neg2\n0.2.0\n\n\nlambda-snippets\nlog\n0.2.0\n\n\nGo\nluk\n0.6.63\n\n\nprettify-json\nmoh\n0.0.3\n\n\ndebugger-for-chrome\nmsj\n3.1.8\n\n\nvscode-icons\nrob\n7.12.0\n\n\ngitblame\nwad\n2.1.0\n\n\n\n(3 theme extensions excluded)\n\nSteps to Reproduce:\n\nLine 1975 and 2061 are duplicates.\nDoes NOT repro with extensions disabled.\n\n\nReproduces without extensions: No"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "dontsave"
+                },
+                "number": 58987,
+                "resourcePath": "/microsoft/vscode/issues/58987",
+                "state": "OPEN",
+                "publishedAt": "2018-09-19T21:42:54Z",
+                "closedAt": null,
+                "title": "moving TypeScript files in explorer fails to update/prompt imports when containing folder is moved",
+                "bodyText": "VSCode Version: 1.27.2\nOS Version: Win 10\nTypescript: 3.0.3\n\nSteps to Reproduce:\n\nSet update imports on move typescript setting to prompt\nCreate an empty project with 2 typescript files, one importing from the other.\nIn the explorer manually move the depended upon file to a new directory. You will be prompted to update the import. This works fine.\nNow move that directory into ANOTHER new directory.\nThis time there is no prompt and the import will be broken"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "aeschli"
+                },
+                "number": 9764,
+                "resourcePath": "/microsoft/vscode/issues/9764",
+                "state": "CLOSED",
+                "publishedAt": "2016-07-26T09:50:18Z",
+                "closedAt": "2016-09-20T07:26:20Z",
+                "title": "[tab completion] multi cursor behaviour different to emmet",
+                "bodyText": "Testing #9698:\n\nenable tab completion: \"editor.tabCompletion\": true\ncreate a html snippet\n\n     \"Div\": {\n        \"prefix\": \"div\",\n        \"body\": [\n            \"<div>\",\n            \"    ${}\",\n            \"</div>\"\n        ],\n        \"description\": \"New div\"\n    }\n\nin a html file have a multiple lines with content 'div'. Set multiple cursors after each div. Press tab.\n👉  primary div is expanded\ndo the same with multiple lines of span, press tab\n👉  tab character is added at each of the cursors\n\nNot sure if the emmet behaviour is intentional.\nIt would be cool if the expansion happens on every cursor."
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "rwmartinez"
+                },
+                "number": 57704,
+                "resourcePath": "/microsoft/vscode/issues/57704",
+                "state": "CLOSED",
+                "publishedAt": "2018-08-31T17:34:30Z",
+                "closedAt": "2018-09-01T05:32:39Z",
+                "title": "Scrolling",
+                "bodyText": "When scrolling through a file, the view is not fluid. It jumps, skips, pauses and is not a constant view as I move up or down the file.\nVersion: July 2018 (version 1.26)"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "ckehoe"
+                },
+                "number": 8633,
+                "resourcePath": "/microsoft/vscode/issues/8633",
+                "state": "CLOSED",
+                "publishedAt": "2016-07-01T16:54:39Z",
+                "closedAt": "2016-07-03T05:44:34Z",
+                "title": "Mac OS - Highlighting text in the editor requires two clicks when the integrated terminal is open",
+                "bodyText": "VSCode Version: 1.2.1\nOS Version: 10.11.5 (15F34) (El Capitan)\n\nSteps to Reproduce:\n\nOpen a file in the editor\nOpen the integrated terminal\nType some commands on the terminal\nTry to copy some text on the editor by highlighting and typing Mac + c\nYou will have to click on the section twice before the text successfully copies"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "antkn33"
+                },
+                "number": 56153,
+                "resourcePath": "/microsoft/vscode/issues/56153",
+                "state": "CLOSED",
+                "publishedAt": "2018-08-10T14:11:55Z",
+                "closedAt": "2018-08-22T20:01:49Z",
+                "title": "open in broswer",
+                "bodyText": "Please natively support opening a file in the browser. LIke a right click menu option. The extensions don't work well especially in chrome.\nthanks"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "fabiospampinato"
+                },
+                "number": 56234,
+                "resourcePath": "/microsoft/vscode/issues/56234",
+                "state": "OPEN",
+                "publishedAt": "2018-08-12T23:34:14Z",
+                "closedAt": null,
+                "title": "TreeItem is too slow",
+                "bodyText": "VSCode Version: 1.25.1\nOS Version: 10.13.5\n\nI've added the following view to Todo+:\n\nI've been benchmarking it against magento2, which contains about 30k files and 2M lines of code. If the user has ag installed in his system the process of finding those todos is quite fast, its takes about 4s to do that on my laptop.\nQuite surprisingly though the bulk of the time is spent on these lines, which are executed about 1k times, since the extension creates about 1k TreeItems under these circumstances:\n\n\n\nAdding the tooltips requires about 500 extra milliseconds, I would expect that number to be near 0ms, I see basically nothing going on here that can justify that number.\n\n\nAdding the commands requires about 4 extra seconds. 4 seconds for doing what? Creating those objects should be almost free, and until those TreeItems get clicked they don't even change anything as far as the user is concerned, I think.\n\n\nAdding the icons requires about 14 extra seconds.  There are less than 10 different images loaded, but for some reason loading them a few hundred times is that slow."
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "rojepp"
+                },
+                "number": 5876,
+                "resourcePath": "/microsoft/vscode/issues/5876",
+                "state": "CLOSED",
+                "publishedAt": "2016-04-27T06:28:16Z",
+                "closedAt": "2016-09-28T09:28:24Z",
+                "title": "Additional instance starts in wrong virtual desktop",
+                "bodyText": "VSCode Version:1.0.0\nOS Version: Windows 7\n\nI'm using desktops.exe from SysInternals to add virtual desktops to Windows 7.\nWhen having an open instance of code in a not active desktop, starting an additional instance will not start on the currently active desktop.\nSteps to Reproduce:\n\nOpen VSCode in desktop 1\nSwitch to desktop 2\nStart another VSCode instance: code .. The new instance starts in desktop 1"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "roblourens"
+                },
+                "number": 14679,
+                "resourcePath": "/microsoft/vscode/issues/14679",
+                "state": "CLOSED",
+                "publishedAt": "2016-10-28T21:51:32Z",
+                "closedAt": "2016-10-31T11:17:43Z",
+                "title": "Intellisense in package.json shows packages inconsistently",
+                "bodyText": "From #13835 (comment),\nWhen typing quickly, I'm selecting packages by initials (or something), but when I type slowly, I'm selecting packages by prefix:\n\nOpen package.json\nPut the cursor in \"dependencies\"\nctrl+space, then esc (It doesn't repro unless the intellisense window has been shown on this line)\ntype blu quickly\nThe intellisense window appears again and I expect to see suggestions for all packages that match. Instead I only see \"blackbaud-npi-datamart-ux\", with the 'blu' highlighted. It's always this one package.\n\nIf you type blu more slowly, then it shows 'blu', 'blu-css', 'blu-generator' ...\nAnother example -\nTyping \"blah\" quickly\n\nSlowly:\n\nThe first type of fuzzy matching would be useful but it should be more consistent."
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "vscodeerrors"
+                },
+                "number": 2470,
+                "resourcePath": "/microsoft/vscode/issues/2470",
+                "state": "CLOSED",
+                "publishedAt": "2016-01-27T20:55:58Z",
+                "closedAt": "2016-02-05T11:27:41Z",
+                "title": " Uncaught SyntaxError: Unexpected end of input",
+                "bodyText": "Issue Id: 3c0f493a-37c5-196b-ce04-755343aba4dbVersions - 0.10.6-release-  dfc08dcStack SyntaxError: Unexpected end of input    at Object.parse (native)[/vs/workbench/parts/debug/node/v8Protocol.ts#L129:21 (V8Protocol.dispatch)](https://github.com/microsoft/vscode/blob/a80232bbcfe8a5cdad1ebc98638673d9dcb02458/src/vs/workbench/parts/debug/node/v8Protocol.ts#L129:21 %28V8Protocol.dispatch%29)[/vs/workbench/parts/debug/node/v8Protocol.ts#L108:11 (V8Protocol.handleData)](https://github.com/microsoft/vscode/blob/a80232bbcfe8a5cdad1ebc98638673d9dcb02458/src/vs/workbench/parts/debug/node/v8Protocol.ts#L108:11 %28V8Protocol.handleData%29)[/vs/workbench/parts/debug/node/v8Protocol.ts#L63:8 (V8Protocol.connect)](https://github.com/microsoft/vscode/blob/a80232bbcfe8a5cdad1ebc98638673d9dcb02458/src/vs/workbench/parts/debug/node/v8Protocol.ts#L63:8 %28V8Protocol.connect%29)    at emitOne (events.js:77:13)    at Socket.emit (events.js:169:7)    at readableAddChunk (_stream_readable.js:146:16)    at Socket.Readable.push (_stream_readable.js:110:10)    at Pipe.onread (net.js:523:20)"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "fiendish"
+                },
+                "number": 48410,
+                "resourcePath": "/microsoft/vscode/issues/48410",
+                "state": "CLOSED",
+                "publishedAt": "2018-04-23T13:59:55Z",
+                "closedAt": "2018-04-24T04:57:58Z",
+                "title": "\"workbench.editor.labelFormat\": \"default\" should show paths with split window",
+                "bodyText": "VSCode Version: Version 1.22.2 (1.22.2)\nOS Version: Mac OS 10.11.6\n\nSteps to Reproduce:\n\nMake two identically named files in different subfolders of a project.\nSet   \"workbench.editor.labelFormat\": \"default\" in settings.\nOpen both files. See path info that differentiates them.\nSplit the window and move one over. No longer see path info that differentiates them.\n\nDesired behavior:\nI should still see path info that differentiates them, since there are two different files open with the same title and the goal of \"default\" is to be able to differentiate them by path.\n\nDoes this issue occur when all extensions are disabled?: Yes/No\nYes."
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "kabforks"
+                },
+                "number": 56364,
+                "resourcePath": "/microsoft/vscode/issues/56364",
+                "state": "CLOSED",
+                "publishedAt": "2018-08-14T13:56:50Z",
+                "closedAt": "2018-08-15T16:36:19Z",
+                "title": "Unresponsive VSCode after upgrade to 1.26.",
+                "bodyText": "Hello!\nAfter installing VSCode 1.26, the GUI is almost completely unresponsive when I open my project. After a few minutes, it can be used. However, the CPU usage will remain at 24% (i have 4 cores). Even after the project or folder is closed.\nIf I open VSCode without a project or folder, it behaves.\nVSCode is responsive if launched with --disable-extensions.\nCould it be an extentions that misbehaves?\nHere is a --status dump:\n\nVersion:          Code 1.26.0 (4e93618, 2018-08-13T16:29:31.933Z)\nOS Version:       Windows_NT x64 10.0.16299\nCPUs:             Intel(R) Core(TM) i7-6820HQ CPU @ 2.70GHz (8 x 2712)\nMemory (System):  15.85GB (3.24GB free)\nVM:               0%\nScreen Reader:    no\nProcess Argv:     C:\\Users\\forsbdan\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe\nGPU Status:       2d_canvas:                    enabled\nchecker_imaging:              disabled_off\nflash_3d:                     enabled\nflash_stage3d:                enabled\nflash_stage3d_baseline:       enabled\ngpu_compositing:              enabled\nmultiple_raster_threads:      enabled_on\nnative_gpu_memory_buffers:    disabled_software\nrasterization:                enabled\nvideo_decode:                 enabled\nvideo_encode:                 enabled\nwebgl:                        enabled\nwebgl2:                       enabled\nCPU %   Mem MB     PID  Process\n0      100   34680  code main\n0       84   22972     shared-process\n0      146   23460     gpu-process\n23     1271   28764     window (Program.cs - demo2 - Visual Studio Code)\n0        6   26188       winpty-process\n0       65   16204         C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\n0       10   19472         console-window-host (Windows internal process)\n0       51   30296       searchService\n0       14   31020       electron-crash-reporter\n0       11   31384       watcherService\n0       10   21716         console-window-host (Windows internal process)\n0      191   33784       extensionHost\n0       38   22568         searchService\n0        3   37816         cmd /s /c \"C:\\Users\\forsbdan.vscode\\extensions\\ms-vscode.csharp-1.15.2.omnisharp\\1.30.1\\OmniSharp.exe -s c:\\src\\demo2\\Fagkveld.sln --hostPID 33784 --stdio DotNet:enablePackageRestore=false --encoding utf-8 --loglevel information formattingOptions:useTabs=false formattingOptions:tabSize=4 formattingOptions:indentationSize=4\"\n0       10    7140           console-window-host (Windows internal process)\n0      115   19888           C:\\Users\\forsbdan.vscode\\extensions\\ms-vscode.csharp-1.15.2.omnisharp\\1.30.1\\OmniSharp.exe  -s c:\\src\\demo2\\Fagkveld.sln --hostPID 33784 --stdio DotNet:enablePackageRestore=false --encoding utf-8 --loglevel information formattingOptions:useTabs=false formattingOptions:tabSize=4 formattingOptions:indentationSize=4\nWorkspace Stats:\n|  Window (Program.cs - demo2 - Visual Studio Code)\n|    Folder (demo2): 83 files\n|      File types: json(15) cshtml(12) cs(8) js(5) ts(5) scss(5) cache(5)\n|                  map(3) vue(3) txt(2)\n|      Conf files: launch.json(2) tasks.json(2) sln(1) csproj(1)\n|                  package.json(1) tsconfig.json(1) webpack.config.js(1)\n|                  settings.json(1)\n|      Launch Configs: coreclr(2)"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "GerbenJdeBoer"
+                },
+                "number": 46332,
+                "resourcePath": "/microsoft/vscode/issues/46332",
+                "state": "CLOSED",
+                "publishedAt": "2018-03-22T11:47:13Z",
+                "closedAt": "2018-09-18T20:28:46Z",
+                "title": "ctrl+z/clrl+y after block mode edit does not follow the (multi-line) cursor to follow the undo/redo steps",
+                "bodyText": "Issue Type: Bug\ncreate dummy text1\ndo block mode edit inside text1\ncreate more dummy text, preferably so much you dont see text1 any more\nctrl + z\nVS Code version: Code 1.21.1 (79b44aa, 2018-03-14T14:46:47.128Z)\nOS version: Windows_NT x64 10.0.15063\n\nExtensions (4)\n\n\n\nExtension\nAuthor (truncated)\nVersion\n\n\n\n\nvscode-eslint\ndba\n1.4.7\n\n\ngc-excelviewer\nGra\n2.0.20\n\n\npython\nms-\n2018.2.1\n\n\nvscode-docker\nPet\n0.0.25\n\n\n\n\nReproduces only with extensions"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "bpasero"
+                },
+                "number": 4886,
+                "resourcePath": "/microsoft/vscode/issues/4886",
+                "state": "CLOSED",
+                "publishedAt": "2016-04-03T15:43:06Z",
+                "closedAt": "2016-07-15T10:37:10Z",
+                "title": "HTML tests are failing",
+                "bodyText": "https://travis-ci.org/Microsoft/vscode/jobs/120206982"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "roblourens"
+                },
+                "number": 72813,
+                "resourcePath": "/microsoft/vscode/issues/72813",
+                "state": "CLOSED",
+                "publishedAt": "2019-04-24T14:59:34Z",
+                "closedAt": "2019-04-24T18:14:01Z",
+                "title": "Settings editor crashes when restoring",
+                "bodyText": "Open settings editor\nTab away\nTab back to it"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "TheJCAB"
+                },
+                "number": 70591,
+                "resourcePath": "/microsoft/vscode/issues/70591",
+                "state": "CLOSED",
+                "publishedAt": "2019-03-15T20:03:22Z",
+                "closedAt": "2019-03-16T03:19:26Z",
+                "title": "VSCode should do like any decent editor, and provide a drop-down from all search text boxes",
+                "bodyText": "Issue Type: Feature Request\nDecent editors provide a drop-down list of older search phrases in their search (and replace!) text entry UI elements.\nBut VSCode doesn't seem to do this, for some reason.\nIt's only polite to remember such things for the comfy user, you know :)\nVS Code version: Code 1.32.3 (a3db5be, 2019-03-14T23:43:35.476Z)\nOS version: Windows_NT x64 10.0.18348"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "sean-mcmanus"
+                },
+                "number": 65327,
+                "resourcePath": "/microsoft/vscode/issues/65327",
+                "state": "CLOSED",
+                "publishedAt": "2018-12-18T21:23:04Z",
+                "closedAt": "2018-12-20T20:11:58Z",
+                "title": "Reopen issue 21518 or 18782 ",
+                "bodyText": "Please reopen either #21518 or #18782 . The bug still repros with C/C++.\nvoid foo(int, const char*, const char *) { // also repros when the params are subsets, e.g. a, aa, aaa\n}\nint main()\n{\nfoo(a, ) // signature Help selects the the 3rd param instead of the 2nd.\n}"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "babramczyk"
+                },
+                "number": 81237,
+                "resourcePath": "/microsoft/vscode/issues/81237",
+                "state": "CLOSED",
+                "publishedAt": "2019-09-20T15:03:33Z",
+                "closedAt": "2019-10-10T08:18:05Z",
+                "title": "Cannot specify global problemMatcher in tasks.json",
+                "bodyText": "VSCode Version: 1.38.1\nOS Version: macOS 10.14.4\n\nSteps to Reproduce:\n\nSpecify \"problemMatcher\": [] at top level of tasks.json object\nRun a task (i.e. an npm task) that has no task config\nVS Code still prompts you for how to scan the task output\n\n\nDoes this issue occur when all extensions are disabled?: No\nOther comments\nEssentially, I want to be able to disable the problem matcher by default. Personally, I never use it, and it's just noise, because every time I run a task I haven't ran before, I have to select Never scan the task output, which opens up tasks.json and adds a new config for that task, just so it can specifiy \"problemMatcher\": [].\nRelated issues\n\n#43003\n\nThis issue was closed, but I still have the problem"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "gregvanl"
+                },
+                "number": 4391,
+                "resourcePath": "/microsoft/vscode/issues/4391",
+                "state": "CLOSED",
+                "publishedAt": "2016-03-17T22:28:42Z",
+                "closedAt": "2016-07-07T15:22:38Z",
+                "title": "Can't do column selection with keyboard over Windows remote desktop",
+                "bodyText": "VSCode Version:alpha 0.10.12 commit 05e203c\nOS Version:Windows 7\n\nSteps to Reproduce:\n\nTry Ctrl+Shift+Alt+arrow keys to \"draw\" a rectangle.\nNothing happens\n\nShift+Alt and mouse works correctly."
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "jabbera"
+                },
+                "number": 22970,
+                "resourcePath": "/microsoft/vscode/issues/22970",
+                "state": "CLOSED",
+                "publishedAt": "2017-03-21T18:50:09Z",
+                "closedAt": "2017-03-21T18:52:52Z",
+                "title": "ARM template type not accepted even though valid.",
+                "bodyText": "This issue appears to have come back (or some variation of it) #881\n\nVSCode Version:1.10.2 with arm tools 0.3.4\nOS Version: Windows 10"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "qcz"
+                },
+                "number": 47566,
+                "resourcePath": "/microsoft/vscode/issues/47566",
+                "state": "CLOSED",
+                "publishedAt": "2018-04-10T09:18:44Z",
+                "closedAt": "2018-04-18T11:28:46Z",
+                "title": "Nonsensical message in extensionManagementService.ts",
+                "bodyText": "Found while translating to Hungarian. The message is \"Unknown error while\" in\nsrc/vs/platform/extensionManagement/node/extensionManagementService.ts.\nIt does not make any sense, the end is missing. Added by @sandy081 in db7ddfd."
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "CODER-2204"
+                },
+                "number": 83854,
+                "resourcePath": "/microsoft/vscode/issues/83854",
+                "state": "CLOSED",
+                "publishedAt": "2019-11-01T20:52:40Z",
+                "closedAt": "2019-11-01T22:23:59Z",
+                "title": "I am not able to run my code.",
+                "bodyText": "Issue Type: Bug\nI am not able to run my code in Visual Studio. It is repeatedly showing that  include errors are detected and to update my includePath for which I have already installed vcpkg from GitHub , still the issue is not yet solved.\nVS Code version: Code 1.39.2 (6ab5985, 2019-10-15T15:35:18.241Z)\nOS version: Windows_NT x64 10.0.18362\n\nSystem Info\n\n\n\nItem\nValue\n\n\n\n\nCPUs\nIntel(R) Core(TM) i5-8250U CPU @ 1.60GHz (8 x 1800)\n\n\nGPU Status\n2d_canvas: enabledflash_3d: enabledflash_stage3d: enabledflash_stage3d_baseline: enabledgpu_compositing: enabledmultiple_raster_threads: enabled_onnative_gpu_memory_buffers: disabled_softwareoop_rasterization: disabled_offprotected_video_decode: enabledrasterization: enabledskia_deferred_display_list: disabled_offskia_renderer: disabled_offsurface_synchronization: enabled_onvideo_decode: unavailable_offviz_display_compositor: disabled_offwebgl: enabledwebgl2: enabled\n\n\nLoad (avg)\nundefined\n\n\nMemory (System)\n7.90GB (3.42GB free)\n\n\nProcess Argv\n\n\n\nScreen Reader\nno\n\n\nVM\n0%\n\n\n\nExtensions (2)\n\n\n\nExtension\nAuthor (truncated)\nVersion\n\n\n\n\ncode-runner\nfor\n0.9.14\n\n\ncpptools\nms-\n0.26.1"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "garfieldbanks"
+                },
+                "number": 17371,
+                "resourcePath": "/microsoft/vscode/issues/17371",
+                "state": "CLOSED",
+                "publishedAt": "2016-12-16T04:33:37Z",
+                "closedAt": "2017-11-17T11:38:55Z",
+                "title": "Add option to view default settings in single plain text file",
+                "bodyText": "Pretty self explanatory. I don't have anything against the new UI or anything but I don't like that I can no longer see the default settings in a single plain text file."
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "aaronfranke"
+                },
+                "number": 66308,
+                "resourcePath": "/microsoft/vscode/issues/66308",
+                "state": "OPEN",
+                "publishedAt": "2019-01-10T00:22:10Z",
+                "closedAt": null,
+                "title": "Allow extensions to contribute build task types",
+                "bodyText": "Currently, when I press Ctrl+Shift+B and click \"Configure Build Task...\" then \"Create tasks.json from template\", the only options are MSBuild, maven, .NET Core, and Others.\nI would like to be able to easily create a build task template for my Mono projects. .NET Core does not have the full feature-set of Mono or .NET Framework yet, and even if it did, I still have existing projects using Mono that I'd like to edit with VS Code. Please add this feature!"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "vscodeerrors"
+                },
+                "number": 5019,
+                "resourcePath": "/microsoft/vscode/issues/5019",
+                "state": "CLOSED",
+                "publishedAt": "2016-04-06T08:31:15Z",
+                "closedAt": "2016-04-06T10:11:16Z",
+                "title": " spawn osascript ENOENT",
+                "bodyText": "Issue Id: def759c3-62fe-b6f1-ff32-27679721a3ffVersions - 0.10.8-  f291f4a-  43ff6af-  5b5f4db-  17fa1cbStack Error: spawn osascript ENOENT    at exports._errnoException (util.js:837:11)    at Process.ChildProcess._handle.onexit (internal/child_process.js:178:32)     at onErrorNT (internal/child_process.js:344:16)     at doNTCallback2 (node.js:442:9)    at process._tickCallback (node.js:356:17)"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "quicksnap"
+                },
+                "number": 35637,
+                "resourcePath": "/microsoft/vscode/issues/35637",
+                "state": "CLOSED",
+                "publishedAt": "2017-10-05T19:08:36Z",
+                "closedAt": "2017-11-17T11:38:27Z",
+                "title": "Preference to disable Recently Opened Files",
+                "bodyText": "VSCode Version: 1.16.1\nOS Version: OSX\n\nI personally have no need for recent files to be promoted to the top of the Goto File results:\n\nThese results actually slow me down, since I a used to Sublime Text fuzzy match behavior. If the \"Recently Opened\" results were not there, I would be able to jump to files in a predictable way.\nAny preference option I'm missing?"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "dbaeumer"
+                },
+                "number": 5650,
+                "resourcePath": "/microsoft/vscode/issues/5650",
+                "state": "CLOSED",
+                "publishedAt": "2016-04-22T10:15:24Z",
+                "closedAt": "2016-08-25T07:51:34Z",
+                "title": "Workbench should provide language agnostic actions to apply all quick fixes to a file",
+                "bodyText": "VSCode Version: 1.0.0\nOS Version:\n\nInstead of extensions and language servers providing their own language specific actions the workbench should provide actions to apply all available quick fixes to a file. I think that this is even possible with the extension API today since we can ask for all code actions for a given range.\nSee microsoft/vscode-eslint#70."
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "ramya-rao-a"
+                },
+                "number": 13103,
+                "resourcePath": "/microsoft/vscode/issues/13103",
+                "state": "CLOSED",
+                "publishedAt": "2016-09-30T21:44:03Z",
+                "closedAt": "2016-10-03T18:48:02Z",
+                "title": "Missing localizations in 1.6",
+                "bodyText": "VSCode Version: 1.6 insiders\nOS Version: doesn't matter\n\nIn Menu Items:\n\nHelp -> Search (Mac OS X)\nView -> Toggle Render Whitespace\nEdit -> Start Dictation (Mac OS X)\n\nIn Settings:\n\nThe below is not localized in User Settings, but is localized in Workspace Settings\n// Place your settings in this file to overwrite the default settings\nThe below is not localized in Keyboard Shortcut settings\n// Place your key bindings in this file to overwrite the defaults\n\nIn Launch.json\nTooltips for all properties except the below are not localized in launch.json\n\nname\ntype\nrequest\npreLaunch task\n\nwhile debugging\n\nThe title for the Debug Console in German appears as \"DebugKonsole\". There should be a space between the \"Debug\" and the \"Console\"\nAdd watch for a symbol. When it is not available, the value says \"not available\" in English\n\nwhile closing unsaved files\nThe dialog box that appears has text that is not localized"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "NilsEnevoldsen"
+                },
+                "number": 74759,
+                "resourcePath": "/microsoft/vscode/issues/74759",
+                "state": "CLOSED",
+                "publishedAt": "2019-06-02T19:21:40Z",
+                "closedAt": "2019-06-03T14:39:14Z",
+                "title": "Other NSDocument apps don't recognize when VS Code changes a document",
+                "bodyText": "VSCode Version: 1.34.0\nOS Version: macOS Mojave 10.14.5\n\nSteps to Reproduce:\n\nOpen a document with an NSDocument-aware app such as TextEdit\n(Optionally, open that document with a second NSDocument-aware window)\nOpen that document with VS Code\n(Optionally, open that document with a second VS Code window)\n(Optionally, edit and save the document in the first app, observe that all VS Code windows update)\nEdit and save the document in VS Code, observe that the first app doesn't update (but all other VS Code windows update)\n(Optionally, re-save the document in the first app. Observe that, prior to interacting with the warning dialog, all other NSDocument-aware windows update.)\n\nThis bug impairs working with the same file in multiple applications on macOS.\nThis may be related to NSFilePresenter and presentedItemDidChange of NSDocument.\nDoes this issue occur when all extensions are disabled?: Yes"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "varadero"
+                },
+                "number": 23062,
+                "resourcePath": "/microsoft/vscode/issues/23062",
+                "state": "CLOSED",
+                "publishedAt": "2017-03-23T00:40:33Z",
+                "closedAt": "2017-03-27T04:42:52Z",
+                "title": "Scrolling with touchpad behaves like pressing up and down arrow keys",
+                "bodyText": "VSCode Version: 1.10.2\nOS Version: Windows 10\n\nSteps to Reproduce:\nI have a laptop with touchpad and scrolling (by touching the touchpad with two fingers and sliding them vertically) file content, files list, terminal window or anything inside VSCode behaves like I am pressing an holding up/down arrow keys. This behavior is not only annoying but it doesn't allow me to scroll say terminal window, because scrolling simply shows the list of last run commands - the same as if you press up arrow key multiple times. Horizontal scrolling behaves as left/right arrow keys - instead of scrolling horizontally, I move the caret. I have a wireless Microsoft mouse and when I use it for scrolling, everything works a expected. When I use my touchpad to scroll in the same way any other application like Chrome, Notepad, whatever, it behaves normally (the caret stays on its location and only the view is scrolled - actually I can normally scroll this GitHub's text area I am writing the issue text in). Does anyone have such problem with VSCode ? Could it because of touchpad drivers (I think mine is \"ELAN Pointing Device\") ?\nList of extensions:\n1 Debugger for Chrome 2.7.0\n2. Git History (git log) 0.2.0\n3. TSLint 0.8.1\n4. vscode-icons 7.4.0\nI tried to disable all extensions and reload VSCode but nothing changed.\nThe video below is made without using arrows keys - only scrolling functionality of my touchpad."
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "kieferrm"
+                },
+                "number": 41061,
+                "resourcePath": "/microsoft/vscode/issues/41061",
+                "state": "CLOSED",
+                "publishedAt": "2018-01-02T22:51:58Z",
+                "closedAt": "2018-02-07T23:46:31Z",
+                "title": "Iteration Plan for January 2018",
+                "bodyText": "Happy 2018 everyone! This plan captures our work in January. This is a 5 week iteration. We will ship early February.\nEndgame\n\nJanuary 29th: Code freeze for the endgame\nFebruary 2nd: Endgame done\n\nThe endgame details for this iteration are tracked in #42374\nPlan Items\nBelow is a summary of the top level plan items. Given the large number of explorations, we'll diverge from our usual practice of having plan items for all bullets upfront. This time we'll add them as we go.\nLegend of annotations:\n\n\n\nMark\nDescription\n\n\n\n\n🏃\nwork in progress\n\n\n✋\nblocked task\n\n\n💪\nstretch goal for this iteration\n\n\n🔴\nmissing issue reference\n\n\n🔵\nmore investigation required to remove uncertainty\n\n\n⚫️\nunder discussion within the team\n\n\n\nInstall/Update\n\n Investigate in improving the update experience on Windows #41676 @joaomoreno\n\nWorkbench\n\n Switch to async dialog API #39536 @bpasero\n Support saving a file in admin mode #1614 @bpasero\n UX for notification improvements #22388 @bpasero @stevencl\n Multi-select in the Explorer, Open Editor #1023 @isidorn\n Reimplement drop downs for Linux/Windows (themable, fixes initial empty contents) #25965 (PR @cleidigh) @bpasero\n Enable Error decorations in explorer #782 @jrieken\n Support natural language search in Settings editor #40957 @roblourens\n Explore improving how a user changes a setting #41040 @roblourens @sandy081\n\nEditor\n\n Text model and storage reimplementation to improve performance #41042 @alexandrudima @rebornix\n Allow to save large files > 256 MB #32503 @bpasero @alexandrudima\n Support language-type independent snippets #13182 @jrieken\n More customization for the caret #41052 @ramya-rao-a\n\nDebug\n\n Launch configs for multi root workspaces #38134 @isidorn\n Support auto attach for node.js subprocess (aka cluster support) #40123 @weinand\n Support to use nvm configuratons in node launch configs #25386 @weinand\n Explore how to run DebugAdapter inside extension #40906 @weinand\n\nTerminal\n\n Improve accessibility of built-in terminal #8339 @Tyriar\n\nSCM\n\n Submodule support @joaomoreno\n Git commit message length counter @joaomoreno\n\nOutput Panel\n\n Show product logs in the output panel #39638 @sandy081\n Make log viewing in output panel more memory efficient #40196 @sandy081\n\nLanguages\nLanguage Server Support\n\n Create a website for LSP @dbaeumer @auchenberg\n Protocol extension for goto implementation microsoft/language-server-protocol#156 @dbaeumer\n\nEmmet\n\n Explore how to improve emmet activation in html and css files #29113 @ramya-rao-a\n\nJavaScript/TypeScript\n\n Adoption of TS 2.7 #41046 @mjbvz\n\nCSS/HTML\n\n Catchup with latest CSS/Less syntax microsoft/vscode-css-languageservice#56 microsoft/vscode-css-languageservice#57 microsoft/vscode-css-languageservice#58 microsoft/vscode-css-languageservice#47 @octref @aeschli\n\nExtensions\n\n  vsce - Warn when package.json misses repository entry #41677 @joaomoreno\n Improve quality of recommended extensions #41054 @ramya-rao-a\n Tastefully extend recommendations to a wider range of file types #38543 @ramya-rao-a\n\nExtension Contributions\n\n Refresh JS Hint support microsoft/vscode-jshint#48 @RMacfarlane\n\nAPI\n\n Migrate proposed Code action API to stable #34664 @jrieken @mjbvz\n Propose API to resolve rename/definition scope #7340 @jrieken @mjbvz\n Explore improving the HTMLPreview support #41047 @mjbvz @jrieken\n Propose refactoring provider API #41048 @jrieken @mjbvz\n Expose logging API to extensions #40053 @roblourens\n Propose Search Provider API @jrieken, @roblourens\n Propose API to create/delete/rename resources for refactorings @jrieken @mjbvz\n Enhance custom tree view API, primary actions, use icons from resource URI, preserve expansion state, improve managing contributions  #27823 @sandy081\n Debug API to create/remove breakpoints @weinand\n Support to modify the root folder of a workspace #35407 @bpasero\n\nPerformance\n\n 🏃 Use ASAR for bundled node modules #41350, #41353 @alexandrudima\n Explore using plain nodejs for helper processes #41685 @alexandrudima\n Explore local storage replacement #18439 @bpasero\n\nServiceability\n\n Issue reporter in separate renderer windows #41041 @RMacfarlane @octref\nLogs\n\n Propagate log level to all processes dynamically #39754 @sandy081\n Support to upload logs #40056 @mjbvz @roblourens\n\n\n\nEngineering\n\n Self-host on @ts-check for our JS code #41678 @joaomoreno @egamma\n 🏃 Support extensions that contribute translations aka \"language packs\" #39178 @dbaeumer @sandy081 @aeschli\n 🏃 Tool to generate/update a language pack from transifex #41682 @aeschli\n Speed up gulp-build @alexandrudima\nImprove issue tracking support bot @chrmarti\n\n Delay action of auto-assignment bot by 15s #33999\n Explore support for detecting duplicate issues #41292\n\n\n\nDocumentations\n\n Make 5min Node.js debugging video to be embedded in docs and uploaded to YouTube channel @auchenberg\n Add Debugging Recipe for VueJS. microsoft/vscode-recipes#55 @auchenberg\n\n\nDeferred\n\n\nImprove documentation of our electron upgrade process #41036 @Tyriar\n\n\nAdd intelisense support for src  attributes and href in html #2037 @octref @aeschli\n\n\nAdopt logging service  @joaomoreno the adoption by the #41680 team\n\n\n💪 Render white space for selection option #1477 @ramya-rao-a\n\n\nProvide API for creating a file based output channel #41672 @sandy081\n\n\n✋ Electron update to 2.0 @Tyriar @bpasero\n\n\n💪 Docathon team\n\n\n✋ Support 32-bit apt repositories #20790 @Tyriar\n\n\nBetter support for webpack TBD\n\n\nSupport web-site for issue reporting @octref @RMacfarlane\n\n\nImprove stability of smoke test, run it as part of the builds #41679 # @joaomoreno\n\n\n💪 Process explorer as a separate renderer window #41045 @RMacfarlane"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "alexdima"
+                },
+                "number": 27480,
+                "resourcePath": "/microsoft/vscode/issues/27480",
+                "state": "CLOSED",
+                "publishedAt": "2017-05-30T05:26:54Z",
+                "closedAt": "2017-05-31T05:42:00Z",
+                "title": "Test editor.multicursorModifier",
+                "bodyText": "Testing #27193\n\n OSX @bpasero\n windows @chrisdias\n linux @isidorn\n\nComplexity: 2\nThere is a new setting editor.multicursorModifier. On Linux and Windows it can have the value \"ctrl\" or \"alt\". On OSX it can have the value \"cmd\" or \"alt\". Please check:\n\nthe default is \"alt\" (just as before). So without any changes, out of the box, multiple cursors are added via \"alt\" + click. It is a known issue that under some Linux distributions, multiple cursors cannot be added via \"alt\" + click, which is used to move windows, this new option aims to also overcome this limitation.\nwhen using alt as the multicursor modifier: ctrl+click (cmd+click) is used for going to definition and opening links. ctrl+alt+click (cmd+alt+click) is used for going to definition and opening in a side editor and for opening a link in a side editor (you can craft a file:/// link to test this)\nwhen using ctrl or cmd as the multicursor modifier, the 3 features swap modifiers and going to definition / opening a link is alt+click. ctrl+alt+click (cmd+alt+click) will still be used for going to definition / opening a link to the side. The hover message on links correctly shows the modifier to be used to open a link."
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "szmcdull"
+                },
+                "number": 66311,
+                "resourcePath": "/microsoft/vscode/issues/66311",
+                "state": "CLOSED",
+                "publishedAt": "2019-01-10T03:54:17Z",
+                "closedAt": "2019-01-22T17:45:01Z",
+                "title": "IDE slows to freeze as more and more output written to internal debug console",
+                "bodyText": "VSCode Version: 1.30.2\nOS Version: Windows 10 x64\n\nSteps to Reproduce:\n\nDebug a GO program\nThe program writes to the standard output\nIDE starts to slow down and finally freeze."
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "octref"
+                },
+                "number": 15542,
+                "resourcePath": "/microsoft/vscode/issues/15542",
+                "state": "CLOSED",
+                "publishedAt": "2016-11-15T22:52:28Z",
+                "closedAt": "2016-11-15T23:56:12Z",
+                "title": "Markdown preview doesn't work correctly when zoomed in",
+                "bodyText": "While smoke testing 1.7.2 eb1f17e"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "javadbat"
+                },
+                "number": 65163,
+                "resourcePath": "/microsoft/vscode/issues/65163",
+                "state": "CLOSED",
+                "publishedAt": "2018-12-16T15:26:39Z",
+                "closedAt": "2019-01-11T06:37:09Z",
+                "title": "nodejs debugger nodemon crush ",
+                "bodyText": "i use nodemon in project and it work smooth and good but when i try to run exact gulp command 'gulp serve' in vs code debugger it cuase following error:\n'[nodemon] app crashed - waiting for file changes before starting...'\nit work really when i type gulp command but in debug mode i get error.\nthe code is:\nvar nodemonStream = nodemon({\n       script: './Server/Bootstrap.js',\n       inspect:true,\n       done:done\n   });"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "jordangarside"
+                },
+                "number": 34586,
+                "resourcePath": "/microsoft/vscode/issues/34586",
+                "state": "CLOSED",
+                "publishedAt": "2017-09-18T19:34:27Z",
+                "closedAt": "2017-09-19T17:12:02Z",
+                "title": "C++ intelliSense with different file system types (Windows 10)",
+                "bodyText": "VSCode Version: Code - Insiders 1.17.0-insider (128a4e3, 2017-09-12T05:24:19.607Z)\nOS Version: Windows_NT x64 10.0.15063\nExtensions:\n\n\n\n\nExtension\nAuthor (truncated)\nVersion\n\n\n\n\ncpptools\nms-\n0.12.4\n\n\n\nIntelliSense doesn't seem to be working with SSHFS filesystem type in Windows 10 (no import errors detected and no squiggly lines). I know this is a fringe case, but I'm wondering if there is an easy fix.\nIntelliSense works fine for this example in the local filesystem as well as on an exfat formatted flash drive.\n\nSteps to Reproduce:\n\nInstall winsshfs and mount a remote file system\nOpen the a project locally from that mounted file system\n\n\n\n\nReproduces without extensions: No (Need the C++ extension for intellisense)"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "weinand"
+                },
+                "number": 39553,
+                "resourcePath": "/microsoft/vscode/issues/39553",
+                "state": "CLOSED",
+                "publishedAt": "2017-12-04T14:33:44Z",
+                "closedAt": "2017-12-05T13:04:11Z",
+                "title": "Test extension API for breakpoints ",
+                "bodyText": "Test for #23188:\nComplexity: 4\n\n Any OS - @jrieken\n\nThe November milestone of VS Code proposes extension API for reading the breakpoints of a workspace and tracking added, removed, and changed breakpoints:\nhttps://github.com/Microsoft/vscode/blob/a42cd0efc5b4baa17075fcd8da1c5e2097419c6f/src/vs/vscode.proposed.d.ts#L251-L329\nVerify:\n\nAPI makes sense (especially the Breakpoint, SourceBreakpoint, FunctionBreakpoint hierarchy and its use of the type discriminator). Will this work if we extend the API to create those types?\nwrite a simple extension that accesses breakpoints and registers for BreakpointsChangeEvents. Please note that accessing breakpoints initially returns an empty array but triggers a subsequent event that has the full set of breakpoints in its added property."
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "makeway4pK"
+                },
+                "number": 77406,
+                "resourcePath": "/microsoft/vscode/issues/77406",
+                "state": "CLOSED",
+                "publishedAt": "2019-07-15T15:18:46Z",
+                "closedAt": "2019-07-30T13:08:48Z",
+                "title": "new behavior of File duplication not smart(file<space>copy.ext)",
+                "bodyText": "Issue Type: Performance Issue\nThe new behavior of file copy pasting (ctrl+c, ctrl+v) in the proj explorer adds whitespace to the new file name, often causing command line scripts to not work. including double quotes to the script is not always easy, and many devs(probably you as well) have a habit of eliminating whites just to avoid this clumsiness.\nOlder behavior was much better, if not best, file.ext -> file.1.ext\nplz restore it\nVS Code version: Code 1.36.1 (2213894, 2019-07-08T22:59:35.033Z)\nOS version: Windows_NT x64 10.0.17134\n\nWorkspace Info\n|  Window (LightStickUI.1.ino - LightStickUI - Visual Studio Code)\n|  Window (Transparent_Sprite_Demo.ino - Transparent_Sprite_Demo - Visual Studio Code)\n|    Folder (Transparent_Sprite_Demo): 3 files\n|      File types: json(2) ino(1)\n|      Conf files:\n|    Folder (LightStickUI): 6 files\n|      File types: json(3) ino(2) cpp(1)\n|      Conf files:;\n\n\nExtensions (2)\n\n\n\nExtension\nAuthor (truncated)\nVersion\n\n\n\n\ncpptools\nms-\n0.24.0\n\n\nvscode-arduino\nvsc\n0.2.27\n\n\n\n(1 theme extensions excluded)"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "BrunnerLivio"
+                },
+                "number": 21868,
+                "resourcePath": "/microsoft/vscode/issues/21868",
+                "state": "CLOSED",
+                "publishedAt": "2017-03-03T09:29:54Z",
+                "closedAt": "2017-04-05T04:49:01Z",
+                "title": "FTP file gets deleted when drag and drop from file explorer",
+                "bodyText": "VSCode Version: 1.10.1\nOS Version: Windows 10 Home 1607\n\nSteps to Reproduce:\n\nOpen file explorer\nOpen any ftp folder\n\nDrag an drop any file from FIle Explorer into VSCode\nThe dragged file gets removed from FTP folder, but it is not openend in VSCode"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "alexdima"
+                },
+                "number": 27537,
+                "resourcePath": "/microsoft/vscode/issues/27537",
+                "state": "CLOSED",
+                "publishedAt": "2017-05-30T10:46:18Z",
+                "closedAt": "2017-06-26T10:34:31Z",
+                "title": "Cannot run integration test while having the vim extension installed ",
+                "bodyText": "Testing #27456\nI have the vim extension installed and disabled (always), but it looks like the integration test picks it up and enables it. This causes the integration test to fail in the Data Migration -> checks if the Untitled file is restored migrating from stable to latest test\nI will continue by uninstalling the vim extension."
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "P-mir"
+                },
+                "number": 81149,
+                "resourcePath": "/microsoft/vscode/issues/81149",
+                "state": "CLOSED",
+                "publishedAt": "2019-09-19T09:20:40Z",
+                "closedAt": "2019-09-20T00:44:23Z",
+                "title": "Bug when running python code in console after running it using the \"run the selection\" feature",
+                "bodyText": "Issue Type: Bug\n1- Write print('hello') in a new python file\n2- Select the chunk of code and run it with run selection (shift+enter)\n3- Run the code again, but using run python file in terminal.\nexpected: hello\nactual:\nFile \"\", line 1\n& C:/Users/me/AppData/Local/Programs/Python/Python37-32/python.exe \"mypath/test.py\"\n^\nSyntaxError: invalid syntax\nVS Code version: Code 1.38.1 (b37e54c, 2019-09-11T13:35:15.005Z)\nOS version: Windows_NT x64 10.0.18362\n\nSystem Info\n\n\n\nItem\nValue\n\n\n\n\nCPUs\nIntel(R) Core(TM) i5-8350U CPU @ 1.70GHz (8 x 1896)\n\n\nGPU Status\n2d_canvas: enabledflash_3d: enabledflash_stage3d: enabledflash_stage3d_baseline: enabledgpu_compositing: enabledmultiple_raster_threads: enabled_onnative_gpu_memory_buffers: disabled_softwareoop_rasterization: disabled_offprotected_video_decode: enabledrasterization: enabledskia_deferred_display_list: disabled_offskia_renderer: disabled_offsurface_synchronization: enabled_onvideo_decode: enabledviz_display_compositor: disabled_offwebgl: enabledwebgl2: enabled\n\n\nLoad (avg)\nundefined\n\n\nMemory (System)\n7.85GB (1.38GB free)\n\n\nProcess Argv\n\n\n\nScreen Reader\nno\n\n\nVM\n0%"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "MashaMSFT"
+                },
+                "number": 68659,
+                "resourcePath": "/microsoft/vscode/issues/68659",
+                "state": "CLOSED",
+                "publishedAt": "2019-02-13T22:51:14Z",
+                "closedAt": "2019-02-19T18:51:11Z",
+                "title": "CLI code snippets do not change font color",
+                "bodyText": "When I use a code block for something like powershell or t-sql, the colors of the font change, making it easier to parse the text.\nFor example\n\n\nFont color changes in accordance to powershell standards.\nHowever, when I do so for CLI, the color doesn't change, and it should be changing, right?\n\n\nNo font color change in accordance to CLI standards."
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "usernamehw"
+                },
+                "number": 82420,
+                "resourcePath": "/microsoft/vscode/issues/82420",
+                "state": "CLOSED",
+                "publishedAt": "2019-10-12T09:55:02Z",
+                "closedAt": "2019-10-14T09:43:54Z",
+                "title": "[SCM tree]: Keep first level indent the same as list",
+                "bodyText": "Pretty similar to #66863. SCM tree should exclude first level items and keep indent at 8px\n\n\n\n\"scm.defaultViewMode\": \"tree\",\n\nIndent for first level items is too big, because of\n\n\"workbench.tree.indent\": 20,"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "octref"
+                },
+                "number": 37335,
+                "resourcePath": "/microsoft/vscode/issues/37335",
+                "state": "CLOSED",
+                "publishedAt": "2017-10-31T19:04:26Z",
+                "closedAt": "2017-11-01T15:10:37Z",
+                "title": "When launching attach config unsuccessfully, debug status bar item does not show",
+                "bodyText": "While testing #35904\nI don't know if this is as-designed, but this seems to be one of the original motivation for #31745.\nWhen I'm pressing F5 while not focusing on debug viewlet, I got no visual feedback as to what's the debug target.\nWould it make sense to enable the status bar item on launching debug instead of on launching debug successfully?"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "shizengzhou"
+                },
+                "number": 48889,
+                "resourcePath": "/microsoft/vscode/issues/48889",
+                "state": "CLOSED",
+                "publishedAt": "2018-04-28T14:15:45Z",
+                "closedAt": "2018-04-29T00:38:45Z",
+                "title": "Why the dark+ theme's syntax is different from the light+ theme's syntax?",
+                "bodyText": "Why the dark+ theme's syntax is different from the light+ theme's syntax?\n\n\nVS Code version: Code 1.22.2 (3aeede7, 2018-04-12T16:38:45.278Z)\nOS version: Windows_NT x64 10.0.15063\n\nSystem Info\n\n\n\nItem\nValue\n\n\n\n\nCPUs\nIntel(R) Core(TM) i5-4210H CPU @ 2.90GHz (4 x 2893)\n\n\nMemory (System)\n7.89GB (1.54GB free)\n\n\nProcess Argv\nC:\\Program Files\\Microsoft VS Code\\Code.exe\n\n\nScreen Reader\nno\n\n\nVM\n0%\n\n\n\nExtensions (9)\n\n\n\nExtension\nAuthor (truncated)\nVersion\n\n\n\n\nvscode-custom-css\nbe5\n2.7.0\n\n\nmarkdown-preview-github-styles\nbie\n0.1.2\n\n\nvscode-eslint\ndba\n1.4.8\n\n\nEditorConfig\nEdi\n0.12.1\n\n\ntslint\neg2\n1.0.28\n\n\nvsc-material-theme\nEqu\n2.0.1\n\n\ndebugger-for-chrome\nmsj\n4.3.0\n\n\nadvanced-new-file\npat\n1.2.0\n\n\nvscode-icons\nrob\n7.23.0"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "egamma"
+                },
+                "number": 29736,
+                "resourcePath": "/microsoft/vscode/issues/29736",
+                "state": "CLOSED",
+                "publishedAt": "2017-06-28T09:45:41Z",
+                "closedAt": "2017-06-29T06:21:08Z",
+                "title": "No completion proposal for the new presentation property.",
+                "bodyText": "I've upgraded a task.json to 2.0.0 and get a deprecated warning\n\nTrying to fix by inserting a presentation property, but there is no Intellisense proposal for presentation."
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "kishandonepudi"
+                },
+                "number": 57059,
+                "resourcePath": "/microsoft/vscode/issues/57059",
+                "state": "CLOSED",
+                "publishedAt": "2018-08-23T05:47:07Z",
+                "closedAt": "2018-09-03T03:01:49Z",
+                "title": "Replace text",
+                "bodyText": "Hi Team,\nI have replaced a word from multiple files through find tab and saved all.\nBut again when i open the ts file to edit some other line , its is showing a working directory.\nIt was fixing by VSC restart.\nPlease fix this with an alternative"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "Eldaw"
+                },
+                "number": 32853,
+                "resourcePath": "/microsoft/vscode/issues/32853",
+                "state": "CLOSED",
+                "publishedAt": "2017-08-20T18:28:39Z",
+                "closedAt": "2018-09-19T14:57:16Z",
+                "title": "Text gets selected, to the next line, when the menu bar auto hides",
+                "bodyText": "VSCode Version: Code 1.15.1 (41abd21, 2017-08-16T18:07:25.676Z)\nOS Version: Windows_NT x64 10.0.15063\nExtensions:\n\n\n\n\nExtension\nAuthor (truncated)\nVersion\n\n\n\n\nspellright\nban\n1.1.16\n\n\npython\ndon\n0.7.0\n\n\ncpptools\nms-\n0.12.3\n\n\ncsharp\nms-\n1.12.1\n\n\nPowerShell\nms-\n1.4.1\n\n\nblank-line-organizer\nrin\n0.1.2\n\n\nsort-lines\nTyr\n1.3.0\n\n\nchange-case\nwma\n1.0.0\n\n\n\n\nSteps to Reproduce:\n\nSet your menu bar to auto hide (i.e. set it to toggle).\nPress Alt to show the menu bar.\nClick somewhere near the beginning of a line of text in your currently visible text document.\nAs the menu bar disappears, notice that the text gets selected, started from the position where you clicked and ending on the line below where you clicked.\n\nExpected:\nNothing should get selected when the menu bar auto hides. The cursor should simply be wherever you clicked.\n\nReproduces without extensions: Yes/No"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "genzoman"
+                },
+                "number": 26483,
+                "resourcePath": "/microsoft/vscode/issues/26483",
+                "state": "CLOSED",
+                "publishedAt": "2017-05-11T19:33:47Z",
+                "closedAt": "2017-05-12T08:41:53Z",
+                "title": "Go to current file from viewing diff. ",
+                "bodyText": "VSCode Version: latest\nOS Version: OSX\n\nSteps to Reproduce:\n\nedit a file in a Git repo with VS Code\nclick the Git icon in the left well to see the diff.\n\nI often want to check the differences between two files, and then immediately go to the current working index of that file.\nexpect: (something like) cmd+ right click on the current working index of a Git diff takes you to that file."
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "pankajsaini123"
+                },
+                "number": 51415,
+                "resourcePath": "/microsoft/vscode/issues/51415",
+                "state": "CLOSED",
+                "publishedAt": "2018-06-08T04:17:07Z",
+                "closedAt": "2018-06-08T10:00:47Z",
+                "title": "unable to update ",
+                "bodyText": "Issue Type: Bug\nI am using vs code, and i am facing issue regarding updates .\nwhy it always require admin permission to start, and\nIt able to fetch updates but does not able to update.\nVS Code version: Code 1.24.0 (6a6e02c, 2018-06-06T17:35:40.560Z)\nOS version: Windows_NT x64 6.0.6002\n\nSystem Info\n\n\n\nItem\nValue\n\n\n\n\nCPUs\nIntel(R) Core(TM) i3-5005U CPU @ 2.00GHz (4 x 1995)\n\n\nGPU Status\n2d_canvas: unavailable_softwareflash_3d: unavailable_softwareflash_stage3d: unavailable_softwareflash_stage3d_baseline: unavailable_softwaregpu_compositing: unavailable_softwaremultiple_raster_threads: unavailable_offnative_gpu_memory_buffers: disabled_softwarerasterization: unavailable_softwarevideo_decode: unavailable_softwarevideo_encode: unavailable_softwarevpx_decode: unavailable_softwarewebgl: unavailable_offwebgl2: unavailable_off\n\n\nMemory (System)\n7.92GB (4.17GB free)\n\n\nProcess Argv\nC:\\Program Files\\Microsoft VS Code\\Code.exe\n\n\nScreen Reader\nno\n\n\nVM\n0%\n\n\n\nExtensions (4)\n\n\n\nExtension\nAuthor (truncated)\nVersion\n\n\n\n\nhtml-snippets\nabu\n0.2.1\n\n\nvscode-html-css\necm\n0.2.0\n\n\nbeautify\nHoo\n1.3.0\n\n\ntrimspaces\nigo\n0.0.24"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "AccessibilityTestingTeam-TCS"
+                },
+                "number": 53485,
+                "resourcePath": "/microsoft/vscode/issues/53485",
+                "state": "CLOSED",
+                "publishedAt": "2018-07-03T11:17:41Z",
+                "closedAt": "2018-07-05T14:46:44Z",
+                "title": "Move editor group into next/previous group(Ctrl+Alt+ Left/Right arrow) commands are not working",
+                "bodyText": "Environment Details:\nVSCode Version : 1.24.1\nAdditional Details:\nMAS Violated: MAS2.1.1\nRepro Steps:\n1)Launch VS Code.\n2)Open Keyboard Shortcuts.\nActual:\nMove editor group into next/previous group(Ctrl+Alt+ Left/Right arrow) commands are not working. After using this command, screen starts rotating.\nExpected:\nBoth the commands should work.\nRecommendations:\nRefer below link which is repository of bug fixes code snippets:\nhttps://microsoft.sharepoint.com/teams/msenable/mas/pages/browse-fixes.aspx\nMAS Reference\nhttps://microsoft.sharepoint.com/:w:/r/teams/msenable/_layouts/15/WopiFrame.aspx?sourcedoc={8492c4eb-c179-40ae-8777-cd044ed725a2}\nAttachment for Reference:\n\nDoes this issue occur when all extensions are disabled?: Yes"
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "chrisdias"
+                },
+                "number": 9638,
+                "resourcePath": "/microsoft/vscode/issues/9638",
+                "state": "CLOSED",
+                "publishedAt": "2016-07-22T20:22:21Z",
+                "closedAt": "2017-01-19T14:14:37Z",
+                "title": "close icon on terminal/console/etc. pane should be \"x\"",
+                "bodyText": "The terminal, debug output, console, etc. panes at the bottom have a small down arrow for the action to close or hide the pane. clicking on this makes the pane slide down and disappear.\n\nThe down arrow to me suggests that the window will be collapsed down rather than closed. Whenever I click on this I expect there to be an action at the bottom of the editor to restore the pane. Instead I have to use the keyboard or menu to bring these back.\nAs a result, a better icon for this pane would be the close \"x\".\nAlternatively, there should be a visualization at the bottom of the editor that there is a pane that can be restored."
+            }
+        }
+    },
+    {
+        "repository": {
+            "issue": {
+                "author": {
+                    "login": "jrieken"
+                },
+                "number": 53533,
+                "resourcePath": "/microsoft/vscode/issues/53533",
+                "state": "CLOSED",
+                "publishedAt": "2018-07-04T13:03:39Z",
+                "closedAt": "2018-07-04T13:15:44Z",
+                "title": "ERR Model is disposed!: Error: Model is disposed!",
+                "bodyText": "ERR Model is disposed!: Error: Model is disposed!\n    at TextModel._assertNotDisposed (file:///Users/jrieken/Code/vscode/out/vs/editor/common/model/textModel.js:245:23)\n    at TextModel.getVersionId (file:///Users/jrieken/Code/vscode/out/vs/editor/common/model/textModel.js:499:18)\n    at OutlinePanel.<anonymous> (file:///Users/jrieken/Code/vscode/out/vs/workbench/parts/outline/electron-browser/outlinePanel.js:548:61)\n    at step (file:///Users/jrieken/Code/vscode/out/vs/workbench/parts/outline/electron-browser/outlinePanel.js:50:23)\n    at Object.next (file:///Users/jrieken/Code/vscode/out/vs/workbench/parts/outline/electron-browser/outlinePanel.js:31:53)\n    at fulfilled (file:///Users/jrieken/Code/vscode/out/vs/workbench/parts/outline/electron-browser/outlinePanel.js:22:58)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:109:7)"
+            }
+        }
+    }
+]

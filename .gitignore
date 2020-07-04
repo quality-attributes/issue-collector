@@ -2,8 +2,7 @@
 # Edit at https://www.gitignore.io/?templates=node,macos
 
 ### Dataset ###
-# Ignore repository data generated. Due to further preprocessing needed
-/data/*.json
+ISSUE_TEMPLATE/
 
 ## macOS ###
 # General

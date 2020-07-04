@@ -1,0 +1,27 @@
+query getRepoData($name: String!, $owner: String!) {
+  repository(name: $name, owner: $owner) {
+    createdAt
+    databaseId
+    description
+    forkCount
+    issues {
+      totalCount
+    }
+    watchers {
+      totalCount
+    }
+    languages(first: 10, orderBy: { field: SIZE, direction: DESC }) {
+      totalCount
+      totalSize
+      nodes {
+        name
+      }
+    }
+    pullRequests {
+      totalCount
+    }
+    commitComments {
+      totalCount
+    }
+  }
+}
